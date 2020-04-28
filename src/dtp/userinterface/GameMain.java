@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 
 import dtp.effect.DataLoader;
 
+import javax.swing.JPanel;
+
 
 public class GameMain extends JFrame{
 
