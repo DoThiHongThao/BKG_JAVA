@@ -12,11 +12,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import com.sun.org.apache.bcel.internal.classfile.Field;
-
 import dtp.effect.DataLoader;
 import dtp.effect.FrameImage;
-import dtp.state.MenuState;
 import dtp.state.State;
 
 public class GamePanel extends JPanel implements Runnable, KeyListener{
