@@ -34,7 +34,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 //		gameState = new MenuState(this);
 		inputManager = new InputManager();
 		try {
-			BufferedImage image=ImageIO.read(new File("data/466.jpg"));
+			BufferedImage image=ImageIO.read(new File("data/nv.png"));
 			BufferedImage image1=image.getSubimage(529, 38, 100, 100);
 			frame1=new FrameImage("frame1",image1);
 		} catch (IOException e) {
@@ -84,7 +84,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	@Override
 	public void paint(Graphics g) {
 //		g.drawImage(gameState.getBufferedImage(), 0, 0, this);
-		g.setColor(Color.WHITE);
+		g.setColor(Color.orange);
 		g.fillRect(0, 0, GameMain.SCREEN_WIDTH, GameMain.SCREEEN_HEIGHT);
 		Graphics2D g2=(Graphics2D)g;
 		System.out.println(frame1.getName());
