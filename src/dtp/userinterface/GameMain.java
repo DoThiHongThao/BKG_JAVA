@@ -25,13 +25,11 @@ public class GameMain extends JFrame{
 		this.setLocationRelativeTo(null);
 		this.setBounds((dimension.width - SCREEN_WIDTH)/2, (dimension.height - SCREEEN_HEIGHT)/2, SCREEN_WIDTH, SCREEEN_HEIGHT);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		try {
-			DataLoader.getInstance().LoadData();
+			DataLoader.getInstance().LoadData();			//phải load dữ liệu trc khi chạy game
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		gamepanel = new GamePanel();
 		this.add(gamepanel);
 		this.addKeyListener(gamepanel);
