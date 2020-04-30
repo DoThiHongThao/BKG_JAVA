@@ -11,11 +11,11 @@ import javax.imageio.ImageIO;
 
 public class DataLoader {
 	private static DataLoader instance= null;	//chi dung duy nhat 1 minh instance
-	private String framefile="data/nv.txt";
+	private String framefile="data/nv1.txt";
 	private String animationfile ="data/animation.txt";
 	
 	private Hashtable<String, FrameImage> frameImages;		//lưu theo dạng key và value
-	//private Hashtable<String, Animation> animation;
+	private Hashtable<String, Animation> animations;
 	//private Hashtable<String, AudioClip> sounds;
 	
 	private int[][] phys_map;
@@ -36,10 +36,10 @@ public class DataLoader {
 			return frameImage;
 	}
 	
-//	public Animation getAnimation(String name) {
-//		Animation animation=new Animation(instance.animation.get(name));
-//		return animation;
-//	}
+	public Animation getAnimation(String name) {
+		Animation animation=new Animation(instance.animations.get(name));
+		return animation;
+	}
 	public void LoadFrame() throws IOException{
 		frameImages=new Hashtable<String, FrameImage>();
 		FileReader fr=new FileReader(framefile);
@@ -90,41 +90,52 @@ public class DataLoader {
 		}
 		br.close();
 	}
-//	public void LoadAnimation() throws IOException{
-//		animation=new Hashtable<String, Animation>();
-//		FileReader fr=new FileReader(animationfile);
-//		BufferedReader br=new BufferedReader(fr);
-//		String line=null;
-//		if(br.readLine()==null) {
-//			System.out.println("No data");
-//			throw new IOException();
-//		}
-//		else {
-//			fr=new FileReader(framefile);
-//			br=new BufferedReader(fr);
-//			
-//			while((line=br.readLine()).equals(""));
-//			int n=Integer.parseInt(line);
-//			
-//			for(int i=0; i<n; i++) {
-//				Animation animation=new Animation();
-//				while((line=br.readLine()).equals(""));
-//				animation.setName(line);
-//				
-//				while((line=br.readLine()).equals(""));
-//				String[] str=line.split(" ");
-//				for(int j=0; j<str.length; j+=2) {
-//					animation.add(getFrameImage(str[j]),Double.parseDouble(str[j+1]));
-//				}
-//				instance.animation.put(animation.getName(), animation);
-//			}
-//		}
-//		br.close();
-//	}
+	public void LoadAnimation() throws IOException {
+        
+        animations = new Hashtable<String, Animation>();
+        
+        FileReader fr = new FileReader(animationfile);
+        BufferedReader br = new BufferedReader(fr);
+        
+        String line = null;
+        
+        if(br.readLine()==null) {
+            System.out.println("No data");
+            throw new IOException();
+        }
+        else {
+            
+            fr = new FileReader(animationfile);
+            br = new BufferedReader(fr);
+            
+            while((line = br.readLine()).equals(""));
+            int n = Integer.parseInt(line);
+            
+            for(int i = 0;i < n; i ++){
+                
+                Animation animation = new Animation();
+                
+                while((line = br.readLine()).equals(""));
+                animation.setName(line);
+                
+                while((line = br.readLine()).equals(""));
+                String[] str = line.split(" ");
+                
+                for(int j = 0;j<str.length;j+=2)
+                    animation.add(getFrameImage(str[j]), Double.parseDouble(str[j+1]));
+                
+                instance.animations.put(animation.getName(), animation);
+                
+            }
+            
+        }
+        
+        br.close();
+    }
 	
 	public void LoadData() throws IOException{
 		LoadFrame();
-//		LoadAnimation();
+		LoadAnimation();
 //		LoadPhysMap();
 //		LoadBackground();
 //		LoadSounds();
