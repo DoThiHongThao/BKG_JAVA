@@ -33,15 +33,15 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	
 //		gameState = new MenuState(this);
 		inputManager = new InputManager();
-		try {
-			BufferedImage image=ImageIO.read(new File("data/nv.png"));
-			BufferedImage image1=image.getSubimage(529, 38, 100, 100);
-			frame1=new FrameImage("frame1",image1);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		frame1=DataLoader.getInstance().getFrameImage("chem1");
-		anima1=DataLoader.getInstance().getAnimation("chem");
+//		try {
+//			BufferedImage image=ImageIO.read(new File("data/bat.png"));
+//			BufferedImage image1=image.getSubimage(529, 38, 100, 100);
+//			frame1=new FrameImage("frame1",image1);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		frame1=DataLoader.getInstance().getFrameImage("bat1");
+		anima1=DataLoader.getInstance().getAnimation("bat");
 		System.out.println(frame1.getName());
 	}
 

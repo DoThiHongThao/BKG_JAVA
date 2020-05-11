@@ -1,0 +1,41 @@
+5
+
+chem1
+image data/nv1.png
+x 833
+y 35
+w 64
+h 99
+
+chem2
+image data/nv1.png
+x 920
+y 19
+w 99
+h 115
+
+chem3
+image data/nv1.png
+x 1037
+y 11
+w 135
+h 123
+
+chem4
+image data/nv1.png
+x 1191
+y 41
+w 122
+h 93
+
+chem5
+image data/nv1.png
+x 1339
+y 48
+w 105
+h 94
+
+
+
+
+
