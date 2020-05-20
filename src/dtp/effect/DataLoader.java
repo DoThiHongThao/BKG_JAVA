@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 public class DataLoader {
 	private static DataLoader instance= null;	//chi dung duy nhat 1 minh instance
 	private String framefile="data/nv.txt";
-	private String animationfile ="data/animation.txt";
+	//private String animationfile ="data/animation.txt";
 	
 	private Hashtable<String, FrameImage> frameImages;		//lưu theo dạng key và value
 	//private Hashtable<String, Animation> animation;
@@ -20,10 +20,7 @@ public class DataLoader {
 	
 	private int[][] phys_map;
 	private int[][] background_map;
-	private DataLoader() {
-		// TODO Auto-generated constructor stub
-		
-	}
+	private DataLoader() {}
 	public static DataLoader getInstance(){
 		if(instance==null) {
 			instance=new DataLoader();
@@ -83,6 +80,7 @@ public class DataLoader {
 				
 				BufferedImage imageData=ImageIO.read(new File(path));
 				BufferedImage image=imageData.getSubimage(x,y,w,h);
+				BufferedImage scaledImage = new MultiStepRe
 				frame.setImage(image);
 				
 				instance.frameImages.put(frame.getName(), frame);
