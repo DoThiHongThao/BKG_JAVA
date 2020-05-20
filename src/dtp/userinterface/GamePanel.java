@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import dtp.effect.Animation;
 import dtp.effect.DataLoader;
 import dtp.effect.FrameImage;
 import dtp.state.State;
@@ -26,18 +27,21 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	private Thread thread;
 	private boolean isRunning = true;
 	FrameImage frame1;
+	Animation anima1;
+	
 	public GamePanel() {
 	
 //		gameState = new MenuState(this);
 		inputManager = new InputManager();
 		try {
-			BufferedImage image=ImageIO.read(new File("data/465.jpg"));
+			BufferedImage image=ImageIO.read(new File("data/nv.png"));
 			BufferedImage image1=image.getSubimage(529, 38, 100, 100);
 			frame1=new FrameImage("frame1",image1);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		frame1=DataLoader.getInstance().getFrameImage("chem1");
+		anima1=DataLoader.getInstance().getAnimation("chem");
 		System.out.println(frame1.getName());
 	}
 
@@ -62,8 +66,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
         while (isRunning) {
 //            gameState.Update();
 //            gameState.Render();
-
-            //repaint();
+        	anima1.Update(System.nanoTime());
+            repaint();
             currentTime = System.nanoTime();
             sleepTime = period - (currentTime - previousTime);
             try {
@@ -80,11 +84,12 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	@Override
 	public void paint(Graphics g) {
 //		g.drawImage(gameState.getBufferedImage(), 0, 0, this);
-		g.setColor(Color.WHITE);
+		g.setColor(Color.orange);
 		g.fillRect(0, 0, GameMain.SCREEN_WIDTH, GameMain.SCREEEN_HEIGHT);
 		Graphics2D g2=(Graphics2D)g;
 		System.out.println(frame1.getName());
 		frame1.draw(g2, 100, 130);
+		anima1.draw(300, 300, g2);
 	}
 
 	@Override

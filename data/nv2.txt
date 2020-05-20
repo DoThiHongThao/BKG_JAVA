@@ -1,0 +1,36 @@
+5
+
+chem1
+image data/467.png
+x 1155
+y 60
+w 87
+h 128
+
+chem2
+image data/467.png
+x 1274
+y 30
+w 132
+h 157
+
+chem3
+image data/467.png
+x 1433
+y 28
+w 165
+h 163
+
+chem4
+image data/467.png
+x 1646
+y 78
+w 153
+h 114
+
+chem5
+image data/467.png
+x 1840
+y 68
+w 135
+h 118

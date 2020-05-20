@@ -1,0 +1,185 @@
+23
+
+chem1
+image data/466.jpg
+x 247
+y 128
+w 174
+h 246
+
+
+chem2
+image data/466.jpg
+x 478
+y 88
+w 259
+h 289
+
+
+chem3
+image data/466.jpg
+x 787
+y 63
+w 319
+h 308
+
+
+chem4
+image data/466.jpg
+x 1206
+y 157
+w 286
+h 220
+
+
+chem5
+image data/466.jpg
+x 1566
+y 161
+w 270
+h 216
+
+
+vung1
+image data/466.jpg
+x 329
+y 411
+w 149
+h 244
+
+
+vung2
+image data/466.jpg
+x 571
+y 422
+w 412
+h 267
+
+
+vung3
+image data/466.jpg
+x 1079
+y 427
+w 305
+h 260
+
+
+vung4
+image data/466.jpg
+x 1504
+y 451
+w 270
+h 235
+
+
+chay_chem1
+image data/466.jpg
+x 63
+y 722
+w 152
+h 242
+
+
+chay_chem2
+image data/466.jpg
+x 255
+y 724
+w 172
+h 239
+
+
+chay_chem3
+image data/466.jpg
+x 436
+y 724
+w 569
+h 242
+
+
+chay_chem4
+image data/466.jpg
+x 1018
+y 730
+w 495
+h 244
+
+
+chay_chem5
+image data/466.jpg
+x 1529
+y 737
+w 354
+h 230
+
+
+chay_chem6
+image data/466.jpg
+x 1891
+y 753
+w 181
+h 229
+
+
+nhay_chem1
+image data/466.jpg
+x 39
+y 1051
+w 207
+h 225
+
+
+nhay_chem2
+image data/466.jpg
+x 263
+y 1000
+w 323
+h 280
+
+
+nhay_chem3
+image data/466.jpg
+x 587
+y 1051
+w 317
+h 131
+
+
+nhay_chem4
+image data/466.jpg
+x 927
+y 1047
+w 215
+h 305
+
+
+nhay_chem5
+image data/466.jpg
+x 1149
+y 1053
+w 217
+h 285
+
+
+chieu1
+image data/466.jpg
+x 1423
+y 1047
+w 147
+h 279
+
+
+chieu2
+image data/466.jpg
+x 1613
+y 1047
+w 235
+h 271
+
+
+chieu3
+image data/466.jpg
+x 1867
+y 1051
+w 201
+h 267
+
