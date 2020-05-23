@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.Hashtable;
 import javax.imageio.ImageIO;
 
+@SuppressWarnings("deprecation")
 public class DataLoader {
     private static DataLoader instance = null;
     private String framefile = "data/frames.txt";
