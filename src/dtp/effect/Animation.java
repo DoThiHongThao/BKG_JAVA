@@ -90,6 +90,7 @@ public class Animation {
         beginTime = 0;
     }
 
+    @SuppressWarnings("deprecation")
     public void add(final FrameImage frameImage, final double timeToNextFrame) {
         ignoreFrames.add(false);
         frameImages.add(frameImage);
