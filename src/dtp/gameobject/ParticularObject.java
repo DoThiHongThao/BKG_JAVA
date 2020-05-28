@@ -191,13 +191,13 @@ public abstract class ParticularObject extends GameObject {
 			case ALIVE:
 				
 				// note: SET DAMAGE FOR OBJECT NO DAMAGE
-				ParticularObject object = getGameWorld().getParticularObjectManager().getCollisionWithEnemyObject(this);
-				if(object != null) {
+				// ParticularObject object = getGameWorld().getParticularObjectManager().getCollisionWithEnemyObject(this);
+				// if(object != null) {
 					
-					if(object.getDamage() > 0) {
-						beHurt(object.getDamage());
-					}
-				}
+				// 	if(object.getDamage() > 0) {
+				// 		beHurt(object.getDamage());
+				// 	}
+				// }
 				
 				break;
 				
@@ -230,7 +230,7 @@ public abstract class ParticularObject extends GameObject {
 				break;
 			
 				default:
-					getGameWorld().getParticularObjectManager().RemoveObject(this);
+					//getGameWorld().getParticularObjectManager().RemoveObject(this);
 					break;
 		}
     }

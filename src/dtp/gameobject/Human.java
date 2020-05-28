@@ -54,55 +54,55 @@ public abstract class Human extends ParticularObject {
 	public void Update() {
 		super.Update();
 		
-		if(getState() == ALIVE || getState() == NOBEHURT){
+	// 	if(getState() == ALIVE || getState() == NOBEHURT){
 			
-			if(!isLanding) {
+	// 		if(!isLanding) {
 				
-				setPosX(getPosX() + getSpeedX());
+	// 			setPosX(getPosX() + getSpeedX());
 				
-				/* neu trang thai dang di sang trai va nguoi choi bi cham tuong trai thi
-				 * se lay Rectangle tra ve khi bi va cham tuong trai 
-				 * de set lai vi tri cua nhan vat */
+	// 			/* neu trang thai dang di sang trai va nguoi choi bi cham tuong trai thi
+	// 			 * se lay Rectangle tra ve khi bi va cham tuong trai 
+	// 			 * de set lai vi tri cua nhan vat */
 				
-				if(getDirection() == LEFT_DIR &&
-						getGameWorld().getPhysicalMap().haveCollisionWithLeftWall(getBoundForCollisionWithMap()) != null) {
+	// 			if(getDirection() == LEFT_DIR &&
+	// 					getGameWorld().getPhysicalMap().haveCollisionWithLeftWall(getBoundForCollisionWithMap()) != null) {
 					
-					Rectangle rectLeftWall = getGameWorld().getPhysicalMap().haveCollisionWithLeftWall(getBoundForCollisionWithMap());
-					setPosX(rectLeftWall.x + rectLeftWall.width + getWidth()/2);
-				}
+	// 				Rectangle rectLeftWall = getGameWorld().getPhysicalMap().haveCollisionWithLeftWall(getBoundForCollisionWithMap());
+	// 				setPosX(rectLeftWall.x + rectLeftWall.width + getWidth()/2);
+	// 			}
 				
-				/* neu trang thai dang di sang phai va nguoi choi bi cham tuong phai thi
-				 * se lay Rectangle tra ve khi bi va cham tuong phai 
-				 * de set lai vi tri cua nhan vat */
+	// 			/* neu trang thai dang di sang phai va nguoi choi bi cham tuong phai thi
+	// 			 * se lay Rectangle tra ve khi bi va cham tuong phai 
+	// 			 * de set lai vi tri cua nhan vat */
 				
-				if(getDirection() == RIGHT_DIR &&
-						getGameWorld().getPhysicalMap().haveCollisionWithRightWall(getBoundForCollisionWithMap()) != null) {
-					Rectangle rectRightWall = getGameWorld().getPhysicalMap().haveCollisionWithRightWall(getBoundForCollisionWithMap());
-					setPosX(rectRightWall.x - getWidth()/2);	// lay tai tam cua nhan vat
-				}
+	// 			if(getDirection() == RIGHT_DIR &&
+	// 					getGameWorld().getPhysicalMap().haveCollisionWithRightWall(getBoundForCollisionWithMap()) != null) {
+	// 				Rectangle rectRightWall = getGameWorld().getPhysicalMap().haveCollisionWithRightWall(getBoundForCollisionWithMap());
+	// 				setPosX(rectRightWall.x - getWidth()/2);	// lay tai tam cua nhan vat
+	// 			}
 				
 				
-				Rectangle boundForCollisionWithMapFuture = getBoundForCollisionWithMap();	// lay rectangle la tam cua nhan vat
-				boundForCollisionWithMapFuture.y += (getSpeedY() != 0 ? getSpeedY() : 2);	
-				Rectangle rectLand = getGameWorld().getPhysicalMap().haveCollisionWithLand(boundForCollisionWithMapFuture); // rectangle cua cham dat
+	// 			Rectangle boundForCollisionWithMapFuture = getBoundForCollisionWithMap();	// lay rectangle la tam cua nhan vat
+	// 			boundForCollisionWithMapFuture.y += (getSpeedY() != 0 ? getSpeedY() : 2);	
+	// 			Rectangle rectLand = getGameWorld().getPhysicalMap().haveCollisionWithLand(boundForCollisionWithMapFuture); // rectangle cua cham dat
 				
-				Rectangle rectTop = getGameWorld().getPhysicalMap().haveCollisionWithTop(boundForCollisionWithMapFuture); // rectangle cham tran
+	// 			Rectangle rectTop = getGameWorld().getPhysicalMap().haveCollisionWithTop(boundForCollisionWithMapFuture); // rectangle cham tran
 				
-				if(rectTop != null) {
+	// 			if(rectTop != null) {
 					
-					setSpeedY(0);
-					setPosY(rectTop.y + getGameWorld().getPhysicalMap().getTitleSize() + getHeight()/2);
-				}else if(rectLand != null){
-					setJumping(false);
-					if(getSpeedY() > 0) setLanding(true);
-					setSpeedY(0);
-					setPosY(rectLand.y - getHeight()/2 - 1);
-				}else {
-					setJumping(true);
-					setSpeedY(getSpeedY() + getMass());
-					setPosY(getPosY() + getSpeedY());
-				}
-			}
-		}
+	// 				setSpeedY(0);
+	// 				setPosY(rectTop.y + getGameWorld().getPhysicalMap().getTitleSize() + getHeight()/2);
+	// 			}else if(rectLand != null){
+	// 				setJumping(false);
+	// 				if(getSpeedY() > 0) setLanding(true);
+	// 				setSpeedY(0);
+	// 				setPosY(rectLand.y - getHeight()/2 - 1);
+	// 			}else {
+	// 				setJumping(true);
+	// 				setSpeedY(getSpeedY() + getMass());
+	// 				setPosY(getPosY() + getSpeedY());
+	// 			}
+	// 		}
+	// 	}
 	}
 }
