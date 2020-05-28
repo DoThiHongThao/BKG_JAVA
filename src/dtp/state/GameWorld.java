@@ -6,6 +6,9 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
+import dtp.camera.Camera;
+import dtp.manager.ParticularObjectManager;
+import dtp.map.PhysicalMap;
 import dtp.userinterface.GamePanel;
 
 @SuppressWarnings("deprecation")
@@ -13,6 +16,10 @@ public class GameWorld extends State {
 
     private BufferedImage bufferedImage;
     private int lastState;
+
+    private PhysicalMap physicalMap;
+    private ParticularObjectManager particularObjectManager;
+    private Camera camera;
 
     public static final int finalBossX = 3600;
     public static final int INIT_GAME = 0;
@@ -43,8 +50,21 @@ public class GameWorld extends State {
 
     public GameWorld(GamePanel gamePanel) {
         super(gamePanel);
-        // TODO Auto-generated constructor stub
+        
     }
+
+
+    public PhysicalMap getPhysicalMap() {
+		return physicalMap;
+    }
+    
+    public Camera getCamera() {
+		return camera;
+    }
+    
+    public ParticularObjectManager getParticularObjectManager() {
+		return particularObjectManager;
+	}
 
     @Override
     public void Update() {

@@ -168,6 +168,15 @@ public abstract class ParticularObject extends GameObject {
 
     public abstract void attack();
     
+    public boolean isObjectOutOfCameraView() {
+		if(getPosX() - getGameWorld().getCamera().getPosX() > getGameWorld().getCamera().getWidthView() ||
+				getPosX() - getGameWorld().getCamera().getPosX() < -50 ||
+				getPosY() - getGameWorld().getCamera().getPosY() > getGameWorld().getCamera().getHeightView() ||
+				getPosY() - getGameWorld().getCamera().getPosY() < -50)
+			return true;
+		else return false;
+	}
+
 	public Rectangle getBoundForCollisionWithMap() { // kiem tra va cham voi ban do
 		Rectangle bound = new Rectangle();          // tao ra mot class kiem tra va cham 
 		bound.x = (int) (getPosX() - (getWidth()/2));
@@ -190,14 +199,14 @@ public abstract class ParticularObject extends GameObject {
 		switch(state) {
 			case ALIVE:
 				
-				// note: SET DAMAGE FOR OBJECT NO DAMAGE
-				// ParticularObject object = getGameWorld().getParticularObjectManager().getCollisionWithEnemyObject(this);
-				// if(object != null) {
+				//note: SET DAMAGE FOR OBJECT NO DAMAGE
+				ParticularObject object = getGameWorld().getParticularObjectManager().getCollisionWithEnemyObject(this);
+				if(object != null) {
 					
-				// 	if(object.getDamage() > 0) {
-				// 		beHurt(object.getDamage());
-				// 	}
-				// }
+					if(object.getDamage() > 0) {
+						beHurt(object.getDamage());
+					}
+				}
 				
 				break;
 				
@@ -235,6 +244,20 @@ public abstract class ParticularObject extends GameObject {
 		}
     }
     
+    public void drawBoundForCollisionWithMap(Graphics2D g2) {
+		Rectangle rectangle = getBoundForCollisionWithMap();
+		g2.setColor(Color.GREEN);
+		
+		g2.drawRect(rectangle.x - (int) getGameWorld().getCamera().getPosX(), rectangle.y - (int) getGameWorld().getCamera().getPosY(),(int) rectangle.width, rectangle.height);
+		
+	}
+	
+	public void drawBoundForCollisionWithEnemy(Graphics2D g2) {
+		Rectangle rectangle = getBoundForCollisionWithEnemy();
+		g2.setColor(Color.RED);
+		g2.drawRect(rectangle.x - (int) getGameWorld().getCamera().getPosX(), rectangle.y - (int) getGameWorld().getCamera().getPosY(), rectangle.width, rectangle.height);
+	}
+
     public abstract Rectangle getBoundForCollisionWithEnemy();
 	public abstract void draw(Graphics2D g2);
 	

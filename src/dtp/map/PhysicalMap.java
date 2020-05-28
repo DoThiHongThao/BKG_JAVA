@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+import dtp.camera.Camera;
 import dtp.effect.DataLoader;
 import dtp.gameobject.GameObject;
 import dtp.state.GameWorld;
@@ -146,14 +147,14 @@ public class PhysicalMap extends GameObject{
     
     public void draw(Graphics2D g2) {   // ve physical map
 		
-		//Camera camera = getGameWorld().getCamera();
+		Camera camera = getGameWorld().getCamera();
 		
 		g2.setColor(Color.GRAY);
 		for(int i = 0; i < phys_map.length; i++) {
 			for(int j = 0; j < phys_map[0].length; j++) {
 				if(phys_map[i][j] != 0)
-					g2.fillRect((int) getPosX() + j*titleSize /*- (int) camera.getPosX()*/, (int) getPosY() + i*titleSize/* - (int) camera.getPosY()*/,
-							titleSize, titleSize);
+					g2.fillRect((int) getPosX() + j*titleSize - (int) camera.getPosX(), (int) getPosY() + i*titleSize - (int) camera.getPosY(),
+					titleSize, titleSize);
 			}
 		}
 	}
