@@ -141,6 +141,7 @@ public class MenuState extends State implements MouseListener{
 		if(Compare(e, lables[4])) {
 			lables[4].change();
 			lables[4].draw((Graphics2D)graphicsPaint);
+			System.out.println("hello");
 		}
 		if(Compare(e, lables[3])) {
 			System.exit(0);
