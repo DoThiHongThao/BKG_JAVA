@@ -69,7 +69,7 @@ public class MenuState extends State implements MouseListener{
 	    		final BufferedImage imageData = ImageIO.read(new File("data/setmenu.png"));
 				final BufferedImage image = imageData.getSubimage(x, y, width, height);
 				lables[i].setImageIcon1(image);
-				if(i <= 3) {
+				if(i < 3) {
 					lables[i].setBound(350 , 100 + (10 + 80)*i, 280, 80);
 				}
 				
@@ -128,7 +128,7 @@ public class MenuState extends State implements MouseListener{
 	public void mouseClicked(final MouseEvent e) {
 
 		if(Compare(e, lables[0]) ) {
-			//gamePanel.setState(new GameWorld(gamePanel));
+			gamePanel.setState(new GameWorld(gamePanel));
 		}
 		if(Compare(e, lables[1])) {
 			try {
@@ -141,9 +141,8 @@ public class MenuState extends State implements MouseListener{
 		if(Compare(e, lables[4])) {
 			lables[4].change();
 			lables[4].draw((Graphics2D)graphicsPaint);
-			System.out.println("hello");
 		}
-		if(Compare(e, lables[3])) {
+		if(Compare(e, lables[2])) {
 			System.exit(0);
 		}
 	}
