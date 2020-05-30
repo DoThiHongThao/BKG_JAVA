@@ -1,185 +1,590 @@
-23
+84
 
 chem1
-image data/466.jpg
-x 247
-y 128
-w 174
-h 246
-
+image data/nv.png
+x 833
+y 35
+w 64
+h 99
 
 chem2
-image data/466.jpg
-x 478
-y 88
-w 259
-h 289
-
+image data/nv.png
+x 920
+y 19
+w 99
+h 115
 
 chem3
-image data/466.jpg
-x 787
-y 63
-w 319
-h 308
-
+image data/nv.png
+x 1037
+y 11
+w 135
+h 123
 
 chem4
-image data/466.jpg
-x 1206
-y 157
-w 286
-h 220
-
+image data/nv.png
+x 1191
+y 41
+w 122
+h 93
 
 chem5
-image data/466.jpg
-x 1566
-y 161
-w 270
-h 216
-
+image data/nv.png
+x 1339
+y 48
+w 105
+h 94
 
 vung1
-image data/466.jpg
-x 329
-y 411
-w 149
-h 244
-
+image data/nv.png
+x 864
+y 192
+w 63
+h 104
 
 vung2
-image data/466.jpg
-x 571
-y 422
-w 412
-h 267
-
+image data/nv.png
+x 958
+y 185
+w 159
+h 107
 
 vung3
-image data/466.jpg
-x 1079
-y 427
-w 305
-h 260
-
+image data/nv.png
+x 1151
+y 185
+w 122
+h 105
 
 vung4
-image data/466.jpg
-x 1504
-y 451
-w 270
-h 235
-
-
-chay_chem1
-image data/466.jpg
-x 63
-y 722
-w 152
-h 242
-
-
-chay_chem2
-image data/466.jpg
-x 255
-y 724
-w 172
-h 239
-
-
-chay_chem3
-image data/466.jpg
-x 436
-y 724
-w 569
-h 242
-
-
-chay_chem4
-image data/466.jpg
-x 1018
-y 730
-w 495
-h 244
-
-
-chay_chem5
-image data/466.jpg
-x 1529
-y 737
-w 354
-h 230
-
-
-chay_chem6
-image data/466.jpg
-x 1891
-y 753
-w 181
-h 229
-
+image data/nv.png
+x 1311
+y 199
+w 110
+h 92
 
 nhay_chem1
-image data/466.jpg
-x 39
-y 1051
-w 207
-h 225
-
+image data/nv.png
+x 903
+y 375
+w 77
+h 87
 
 nhay_chem2
-image data/466.jpg
-x 263
-y 1000
-w 323
-h 280
-
+image data/nv.png
+x 987
+y 356
+w 120
+h 107
 
 nhay_chem3
-image data/466.jpg
-x 587
-y 1051
-w 317
-h 131
-
+image data/nv.png
+x 1113
+y 373
+w 123
+h 123
 
 nhay_chem4
-image data/466.jpg
-x 927
-y 1047
-w 215
-h 305
-
+image data/nv.png
+x 1242
+y 372
+w 80
+h 123
 
 nhay_chem5
-image data/466.jpg
-x 1149
-y 1053
-w 217
-h 285
+image data/nv.png
+x 1328
+y 372
+w 81
+h 118
 
+dung_chem1
+image data/nv.png
+x 36
+y 545
+w 63
+h 101
+
+dung_chem2
+image data/nv.png
+x 106
+y 544
+w 70
+h 102
+
+dung_chem3
+image data/nv.png
+x 178
+y 549
+w 215
+h 101
+
+dung_chem4
+image data/nv.png
+x 396
+y 550
+w 191
+h 96
+
+dung_chem5
+image data/nv.png
+x 595
+y 551
+w 138
+h 95
+
+dung_chem6
+image data/nv.png
+x 736
+y 560
+w 68
+h 85
 
 chieu1
-image data/466.jpg
-x 1423
-y 1047
-w 147
-h 279
-
+image data/nv.png
+x 870
+y 547
+w 59
+h 96
 
 chieu2
-image data/466.jpg
-x 1613
-y 1047
-w 235
-h 271
-
+image data/nv.png
+x 942
+y 548
+w 86
+h 99
 
 chieu3
-image data/466.jpg
-x 1867
-y 1051
-w 201
-h 267
+image data/nv.png
+x 1038
+y 547
+w 75
+h 99
+
+chieu_thuc1
+image data/nv.png
+x 42
+y 676
+w 20
+h 13
+
+chieu_thuc2
+image data/nv.png
+x 72
+y 676
+w 21
+h 14
+
+chieu_thuc3
+image data/nv.png
+x 102
+y 676
+w 18
+h 13
+
+chieu_thuc4
+image data/nv.png
+x 137
+y 675
+w 20
+h 14
+
+chieu_thuc5
+image data/nv.png
+x 174
+y 676
+w 13
+h 13
+
+chieu_thuc6
+image data/nv.png
+x 222
+y 672
+w 18
+h 19
+
+chieu_thuc7
+image data/nv.png
+x 256
+y 672
+w 21
+h 20
+
+chieu_thuc8
+image data/nv.png
+x 290
+y 672
+w 21
+h 21
+
+chieu_thuc9
+image data/nv.png
+x 326
+y 671
+w 19
+h 20
+
+chieu_thuc10
+image data/nv.png
+x 357
+y 676
+w 23
+h 16
+
+chieu_thuc11
+image data/nv.png
+x 388
+y 674
+w 21
+h 19
+
+chieu_thuc12
+image data/nv.png
+x 423
+y 676
+w 30
+h 15
+
+chieu_thuc13
+image data/nv.png
+x 464
+y 675
+w 35
+h 17
+
+chieu_thuc14
+image data/nv.png
+x 510
+y 672
+w 24
+h 21
+
+chieu_thuc15
+image data/nv.png
+x 551
+y 672
+w 24
+h 23
+
+chieu_thuc16
+image data/nv.png
+x 585
+y 665
+w 25
+h 39
+
+chieu_thuc17
+image data/nv.png
+x 613
+y 665
+w 23
+h 37
+
+chieu_thuc18
+image data/nv.png
+x 645
+y 664
+w 22
+h 39
+
+chieu_thuc19
+image data/nv.png
+x 22
+y 710
+w 76
+h 53
+
+chieu_thuc20
+image data/nv.png
+x 106
+y 715
+w 74
+h 45
+
+chieu_thuc21
+image data/nv.png
+x 192
+y 713
+w 76
+h 46
+
+chieu_thuc22
+image data/nv.png
+x 276
+y 709
+w 81
+h 53
+
+dung1
+image data/nv.png
+x 36
+y 38
+w 53
+h 98
+
+dung2
+image data/nv.png
+x 96
+y 38
+w 57
+h 98
+
+dung3
+image data/nv.png
+x 157
+y 40
+w 61
+h 100
+
+dung4
+image data/nv.png
+x 223
+y 38
+w 53
+h 99
+
+ngoi1
+image data/nv.png
+x 299
+y 40
+w 54
+h 95
+
+ngoi2
+image data/nv.png
+x 361
+y 54
+w 58
+h 81
+
+ngoi3
+image data/nv.png
+x 431
+y 51
+w 58
+h 86
+
+truot4
+image data/nv.png
+x 499
+y 62
+w 92
+h 74
+
+truot5
+image data/nv.png
+x 604
+y 58
+w 94
+h 77
+
+truot6
+image data/nv.png
+x 716
+y 59
+w 93
+h 76
+
+chay1
+image data/nv.png
+x 33
+y 146
+w 87
+h 90
+
+chay2
+image data/nv.png
+x 130
+y 146
+w 85
+h 91
+
+chay3
+image data/nv.png
+x 219
+y 148
+w 84
+h 90
+
+chay4
+image data/nv.png
+x 310
+y 146
+w 86
+h 93
+
+chay5
+image data/nv.png
+x 403
+y 147
+w 81
+h 92
+
+chay6
+image data/nv.png
+x 490
+y 145
+w 85
+h 92
+
+trung_chieu1
+image data/nv.png
+x 585
+y 149
+w 61
+h 92
+
+trung_chieu2
+image data/nv.png
+x 659
+y 151
+w 62
+h 88
+
+trung_chieu3
+image data/nv.png
+x 740
+y 150
+w 63
+h 88
+
+lon_vong1
+image data/nv.png
+x 38
+y 287
+w 64
+h 86
+
+lon_vong2
+image data/nv.png
+x 104
+y 244
+w 70
+h 106
+
+lon_vong3
+image data/nv.png
+x 180
+y 247
+w 72
+h 81
+
+lon_vong4
+image data/nv.png
+x 259
+y 248
+w 78
+h 61
+
+lon_vong5
+image data/nv.png
+x 344
+y 250
+w 60
+h 83
+
+lon_vong6
+image data/nv.png
+x 412
+y 253
+w 77
+h 63
+
+lon_vong7
+image data/nv.png
+x 492
+y 246
+w 73
+h 83
+
+lon_vong8
+image data/nv.png
+x 569
+y 246
+w 75
+h 89
+
+lon_vong9
+image data/nv.png
+x 655
+y 292
+w 78
+h 92
+
+leo
+image data/nv.png
+x 754
+y 258
+w 68
+h 94
+
+dung_tr1
+image data/nv.png
+x 16
+y 386
+w 56
+h 101
+
+dung_tr2
+image data/nv.png
+x 77
+y 388
+w 74
+h 94
+
+dung_tr3
+image data/nv.png
+x 155
+y 387
+w 75
+h 98
+
+dung_tr4
+image data/nv.png
+x 237
+y 386
+w 77
+h 98
+
+dung_tr5
+image data/nv.png
+x 318
+y 396
+w 59
+h 91
+
+chet1
+image data/nv.png
+x 377
+y 385
+w 73
+h 98
+
+chet2
+image data/nv.png
+x 462
+y 386
+w 81
+h 97
+
+chet3
+image data/nv.png
+x 549
+y 398
+w 79
+h 86
+
+chet4
+image data/nv.png
+x 634
+y 423
+w 94
+h 60
+
+chet5
+image data/nv.png
+x 733
+y 429
+w 104
+h 57
 

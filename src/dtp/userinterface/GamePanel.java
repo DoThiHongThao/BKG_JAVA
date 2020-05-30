@@ -40,8 +40,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
-		frame1=DataLoader.getInstance().getFrameImage("bat1");
-		anima1=DataLoader.getInstance().getAnimation("bat");
+		frame1=DataLoader.getInstance().getFrameImage("chem_manh7");
+		anima1=DataLoader.getInstance().getAnimation("chet");
 		System.out.println(frame1.getName());
 	}
 

@@ -63,7 +63,7 @@ y 44
 w 30
 h 21
 
-bat_die1
+bat_die2
 image data/bat.png
 x 174
 y 40

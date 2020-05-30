@@ -11,8 +11,8 @@ import javax.imageio.ImageIO;
 
 public class DataLoader {
 	private static DataLoader instance= null;	//chi dung duy nhat 1 minh instance
-	private String framefile="data/nv6.txt";
-	private String animationfile ="data/animation.txt";
+	private String framefile="data/nv2.txt";
+	private String animationfile ="data/animation_nv2.txt";
 	
 	private Hashtable<String, FrameImage> frameImages;		//lưu theo dạng key và value
 	private Hashtable<String, Animation> animations;

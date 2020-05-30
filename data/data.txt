@@ -1,0 +1,17 @@
+4
+
+nv1
+data/nv1.txt
+data/animation_nv1.txt
+
+nv2
+data/nv2.txt
+data/animation_nv2.txt
+
+boss1
+data/boss1.txt
+data/animation_boss.txt
+
+bat
+data/bat.txt
+data/animation_bat.txt
