@@ -6,182 +6,144 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-
 public class Animation {
-    
     private String name;
-    
     private boolean isRepeated;
-    
-    private ArrayList<FrameImage> frameImages;
     private int currentFrame;
-    
-    private ArrayList<Boolean> ignoreFrames;
-    
-    private ArrayList<Double> delayFrames;
     private long beginTime;
+    private final boolean drawRectFrame;
+    private final ArrayList<FrameImage> frameImages;
+    private final ArrayList<Boolean> ignoreFrames;
+    private final ArrayList<Double> delayFrames;
 
-    private boolean drawRectFrame;
-    
-    public Animation(){
+    public Animation() {
         delayFrames = new ArrayList<Double>();
         beginTime = 0;
         currentFrame = 0;
 
         ignoreFrames = new ArrayList<Boolean>();
-        
         frameImages = new ArrayList<FrameImage>();
-        
         drawRectFrame = false;
-        
         isRepeated = true;
     }
-    
-    public Animation(Animation animation){
-        
+
+    public Animation(final Animation animation) {
         beginTime = animation.beginTime;
         currentFrame = animation.currentFrame;
         drawRectFrame = animation.drawRectFrame;
         isRepeated = animation.isRepeated;
-        
+
         delayFrames = new ArrayList<Double>();
-        for(Double d : animation.delayFrames){
+        for (final Double d : animation.delayFrames) {
             delayFrames.add(d);
         }
-        
+
         ignoreFrames = new ArrayList<Boolean>();
-        for(boolean b : animation.ignoreFrames){
+        for (final boolean b : animation.ignoreFrames) {
             ignoreFrames.add(b);
         }
-        
+
         frameImages = new ArrayList<FrameImage>();
-        for(FrameImage f : animation.frameImages){
+        for (final FrameImage f : animation.frameImages) {
             frameImages.add(new FrameImage(f));
         }
     }
-    
-    public void setIsRepeated(boolean isRepeated){
+
+    public void setIsRepeated(final boolean isRepeated) {
         this.isRepeated = isRepeated;
     }
-    
-    public boolean getIsRepeated(){
-        return isRepeated;
-    }
-    
-    public boolean isIgnoreFrame(int id){
+
+    public boolean isIgnoreFrame(final int id) {
         return ignoreFrames.get(id);
     }
-    
-    public void setIgnoreFrame(int id){
-        if(id >= 0 && id < ignoreFrames.size())
+
+    public void setIgnoreFrame(final int id) {
+        if (id >= 0 && id < ignoreFrames.size())
             ignoreFrames.set(id, true);
     }
-    
-    public void unIgnoreFrame(int id){
-        if(id >= 0 && id < ignoreFrames.size())
+
+    public void unIgnoreFrame(final int id) {
+        if (id >= 0 && id < ignoreFrames.size())
             ignoreFrames.set(id, false);
     }
-    
-    public void setName(String name){
+
+    public void setName(final String name) {
         this.name = name;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    
-    public void setCurrentFrame(int currentFrame){
-        if(currentFrame >= 0 && currentFrame < frameImages.size())
+
+    public void setCurrentFrame(final int currentFrame) {
+        if (currentFrame >= 0 && currentFrame < frameImages.size())
             this.currentFrame = currentFrame;
         else this.currentFrame = 0;
     }
-    public int getCurrentFrame(){
+
+    public int getCurrentFrame() {
         return this.currentFrame;
     }
-    
-    public void reset(){
+
+    public void reset() {
         currentFrame = 0;
         beginTime = 0;
     }
-    
-    public void add(FrameImage frameImage, double timeToNextFrame){
 
+    @SuppressWarnings("deprecation")
+    public void add(final FrameImage frameImage, final double timeToNextFrame) {
         ignoreFrames.add(false);
         frameImages.add(frameImage);
         delayFrames.add(new Double(timeToNextFrame));
-        
-    }
-    
-    public void setDrawRectFrame(boolean b){
-        drawRectFrame = b;
     }
 
-    
-    public BufferedImage getCurrentImage(){
+    public BufferedImage getCurrentImage() {
         return frameImages.get(currentFrame).getImage();
     }
-    
-    public void Update(long deltaTime){
-        
-        if(beginTime == 0) beginTime = deltaTime;
-        else{
-            
-            if(deltaTime - beginTime > delayFrames.get(currentFrame)){
+
+    public void Update(final long deltaTime) {
+        if (beginTime == 0) beginTime = deltaTime;
+        else {
+            if (deltaTime - beginTime > delayFrames.get(currentFrame)) {
                 nextFrame();
                 beginTime = deltaTime;
             }
         }
-        
     }
 
-    
-    public boolean isLastFrame(){
-        if(currentFrame == frameImages.size() - 1)
+    public boolean isLastFrame() {
+        if (currentFrame == frameImages.size() - 1)
             return true;
         else return false;
     }
-    
-    private void nextFrame(){
-        
-        if(currentFrame >= frameImages.size() - 1){
-            
-            if(isRepeated) currentFrame = 0;
-        }
-        else currentFrame++;
-        
-        if(ignoreFrames.get(currentFrame)) nextFrame();
-        
+
+    private void nextFrame() {
+        if (currentFrame >= frameImages.size() - 1) {
+            if (isRepeated) currentFrame = 0;
+        } else currentFrame++;
+        if (ignoreFrames.get(currentFrame)) nextFrame();
     }
-    
-    
-    
-    public void flipAllImage(){
-        
-        for(int i = 0;i < frameImages.size(); i++){
-            
+
+    public void flipAllImage() {
+        for (int i = 0; i < frameImages.size(); i++) {
             BufferedImage image = frameImages.get(i).getImage();
-            
-            AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
+
+            final AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
             tx.translate(-image.getWidth(), 0);
 
-            AffineTransformOp op = new AffineTransformOp(tx,
-            AffineTransformOp.TYPE_BILINEAR);
+            final AffineTransformOp op = new AffineTransformOp(tx,
+                    AffineTransformOp.TYPE_BILINEAR);
             image = op.filter(image, null);
-            
-            frameImages.get(i).setImage(image);
-            
-        }
-        
-    }
-    
-    public void draw(int x, int y, Graphics2D g2){
-        
-        BufferedImage image = getCurrentImage();
-        
-        g2.drawImage(image, x - image.getWidth()/2, y - image.getHeight()/2, null);
-        if(drawRectFrame)
-            g2.drawRect(x - image.getWidth()/2, x - image.getWidth()/2, image.getWidth(), image.getHeight());
-        
-    }
-    
-}
 
+            frameImages.get(i).setImage(image);
+        }
+    }
+
+    public void draw(final int x, final int y, final Graphics2D g2) {
+        final BufferedImage image = getCurrentImage();
+        g2.drawImage(image, x - image.getWidth() / 2, y - image.getHeight() / 2, null);
+        if (drawRectFrame) {
+            g2.drawRect(x - image.getWidth() / 2, x - image.getWidth() / 2, image.getWidth(), image.getHeight());
+        }
+    }
+}

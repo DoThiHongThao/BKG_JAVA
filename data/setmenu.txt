@@ -1,0 +1,37 @@
+6
+
+Play
+x 217
+y 161
+w 2001
+h 625
+
+Options
+x 193
+y 841
+w 2001
+h 625
+
+Exit
+x 217
+y 2129
+w 2001
+h 625
+
+Credits
+x 209
+y 1489
+w 2001
+h 625
+
+SoundOn
+x 2737
+y 825
+w 513
+h 529
+
+SoundOff
+x 2705
+y 201
+w 513
+h 529
