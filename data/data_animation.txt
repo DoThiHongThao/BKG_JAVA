@@ -1,8 +1,6 @@
-5
+4
 
 data/animation_nv1.txt
-
-data/animation_nv2.txt
 
 data/animation_boss.txt
 

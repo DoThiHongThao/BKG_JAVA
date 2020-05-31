@@ -1,8 +1,6 @@
-6
+5
 
 data/nv1.txt
-
-data/nv2.txt
 
 data/boss1.txt
 
