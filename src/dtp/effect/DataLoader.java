@@ -23,6 +23,10 @@ import javax.swing.JPanel;
 public class DataLoader {
     private static DataLoader instance = null;
 
+    private String framefile = "data/data_nv.txt";
+    private String animationfile = "data/data_animation.txt";
+    private String physmapfile = "data/physmap.txt";
+    private String backgroundmapfile = "data/bgmap.txt";
     private String soundfile = "data/sounds.txt";
     private Hashtable<String, FrameImage> frameImages;
     private Hashtable<String, Animation> animations;
@@ -66,7 +70,7 @@ public class DataLoader {
         return instance.background_map;
     }
 
-    public void LoadData(String framefile, String animationfile, String physmapfile, String backgroundmapfile) throws IOException {
+    public void LoadData() throws IOException {
         LoadMain = new JFrame();
 		Toolkit tookit = LoadMain.getToolkit();
 		Dimension dimension = tookit.getScreenSize();

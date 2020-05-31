@@ -40,16 +40,16 @@ public class Ninja extends Human {
 
         setTimeForNoBeHurt(2000 * 1000000);
 
-        runForwardAnimation = DataLoader.getInstance().getAnimation("chay");
-		runBackAnimation = DataLoader.getInstance().getAnimation("chay");
+        runForwardAnimation = DataLoader.getInstance().getAnimation("ninja_chay");
+		runBackAnimation = DataLoader.getInstance().getAnimation("ninja_chay");
 		runBackAnimation.flipAllImage();
 		
-		idleForwardAnimation = DataLoader.getInstance().getAnimation("dung");
-		idleBackAnimation = DataLoader.getInstance().getAnimation("dung");
+		idleForwardAnimation = DataLoader.getInstance().getAnimation("ninja_dung");
+		idleBackAnimation = DataLoader.getInstance().getAnimation("ninja_dung");
 		idleBackAnimation.flipAllImage();
 		
-		dickForwardAnimation = DataLoader.getInstance().getAnimation("ngoi");
-		dickBackAnimation = DataLoader.getInstance().getAnimation("ngoi");
+		dickForwardAnimation = DataLoader.getInstance().getAnimation("ninja_ngoi");
+		dickBackAnimation = DataLoader.getInstance().getAnimation("ninja_ngoi");
 		dickBackAnimation.flipAllImage();
 		
 		flyForwardAnimation = DataLoader.getInstance().getAnimation("lon_vong");
@@ -66,8 +66,8 @@ public class Ninja extends Human {
 		// climWallForward = DataLoader.getInstance().getAnimation("clim_wall");
 		// climWallForward.flipAllImage();
 		
-		behurtForvardAnim = DataLoader.getInstance().getAnimation("trung_dan");
-		behurtBackAnimation = DataLoader.getInstance().getAnimation("trung_dan");
+		behurtForvardAnim = DataLoader.getInstance().getAnimation("trung_chieu");
+		behurtBackAnimation = DataLoader.getInstance().getAnimation("trung_chieu");
 		behurtBackAnimation.flipAllImage();
 		
 		idleShootingForwardAnimation = DataLoader.getInstance().getAnimation("dung_chem");
