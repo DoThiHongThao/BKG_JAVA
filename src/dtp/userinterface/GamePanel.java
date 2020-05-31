@@ -14,6 +14,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
     
 	private static final long serialVersionUID = 1L;
 	
+
 	State gameState;
     InputManager inputManager;
     Thread gameThread;

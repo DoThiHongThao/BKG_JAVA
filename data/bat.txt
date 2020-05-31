@@ -1,4 +1,4 @@
-20
+23
 
 bat1
 image data/bat.png
@@ -36,7 +36,7 @@ w 29
 h 24
 
 bat_right1
-image data/nv.png
+image data/bat.png
 x 15
 y 45
 w 38
@@ -139,3 +139,24 @@ x 175
 y 93
 w 31
 h 30
+
+bullet4_1
+image data/enemysprite1.png
+x 13
+y 771
+w 17
+h 17
+
+bullet4_2
+image data/enemysprite1.png
+x 33
+y 770
+w 19
+h 19
+
+bullet4_3
+image data/enemysprite1.png
+x 56
+y 767
+w 24
+h 24

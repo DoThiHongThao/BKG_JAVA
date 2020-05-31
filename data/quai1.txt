@@ -1,0 +1,385 @@
+54
+
+bullet1_1
+image data/megasprite.png
+x 1
+y 950
+w 26
+h 26
+
+bullet1_2
+image data/megasprite.png
+x 52
+y 942
+w 40
+h 40
+
+bullet1_3
+image data/megasprite.png
+x 110
+y 929
+w 60
+h 60
+
+bullet1_4
+image data/megasprite.png
+x 198
+y 948
+w 100
+h 30
+
+bullet1_5
+image data/megasprite.png
+x 294
+y 948
+w 90
+h 30
+
+bullet1_6
+image data/megasprite.png
+x 403
+y 948
+w 100
+h 30
+
+bullet1_7
+image data/megasprite.png
+x 536
+y 929
+w 100
+h 55
+
+bullet1_8
+image data/megasprite.png
+x 661
+y 929
+w 100
+h 55
+
+smallredgun1
+image data/enemysprite1.png
+x 87
+y 587
+w 60
+h 39
+
+redeye1
+image data/enemysprite2.png
+x 5
+y 11
+w 135
+h 89
+
+redeye2
+image data/enemysprite2.png
+x 141
+y 11
+w 135
+h 89
+
+darkraise1
+image data/enemysprite1.png
+x 2
+y 670
+w 127
+h 80
+
+darkraise2
+image data/enemysprite1.png
+x 134
+y 675
+w 121
+h 80
+
+darkraise3
+image data/enemysprite1.png
+x 265
+y 681
+w 110
+h 80
+
+
+
+
+dangerousgirl1
+image data/enemysprite1.png
+x 0
+y 114
+w 100
+h 97
+
+dangerousgirl2
+image data/enemysprite1.png
+x 109
+y 114
+w 99
+h 97
+
+dangerousgirl3
+image data/enemysprite1.png
+x 234
+y 114
+w 70
+h 97
+
+dangerousgirl4
+image data/enemysprite1.png
+x 338
+y 114
+w 106
+h 97
+
+dangerousgirl5
+image data/enemysprite1.png
+x 436
+y 114
+w 104
+h 97
+
+dangerousgirl6
+image data/enemysprite1.png
+x 546
+y 114
+w 109
+h 97
+
+dangerousgirl7
+image data/enemysprite1.png
+x 670
+y 114
+w 76
+h 97
+
+dangerousgirl8
+image data/enemysprite1.png
+x 768
+y 114
+w 82
+h 97
+
+robotR1
+image data/enemysprite1.png
+x 491
+y 536
+w 100
+h 114
+
+robotR2
+image data/enemysprite1.png
+x 606
+y 536
+w 100
+h 114
+
+robotR3
+image data/enemysprite1.png
+x 723
+y 536
+w 100
+h 114
+
+bullet2_1
+image data/enemysprite1.png
+x 405
+y 351
+w 34
+h 34
+
+bullet2_2
+image data/enemysprite1.png
+x 449
+y 356
+w 25
+h 25
+
+bullet2_3
+image data/enemysprite1.png
+x 484
+y 354
+w 29
+h 29
+
+
+bullet3_1
+image data/enemysprite1.png
+x 173
+y 600
+w 11
+h 11
+
+bullet3_2
+image data/enemysprite1.png
+x 189
+y 598
+w 15
+h 15
+
+bullet3_3
+image data/enemysprite1.png
+x 214
+y 598
+w 17
+h 17
+
+bullet3_4
+image data/enemysprite1.png
+x 240
+y 594
+w 23
+h 23
+
+bullet4_1
+image data/enemysprite1.png
+x 13
+y 771
+w 17
+h 17
+
+bullet4_2
+image data/enemysprite1.png
+x 33
+y 770
+w 19
+h 19
+
+bullet4_3
+image data/enemysprite1.png
+x 56
+y 767
+w 24
+h 24
+
+
+
+bullet5_1
+image data/enemysprite1.png
+x 518
+y 666
+w 47
+h 47
+
+bullet5_2
+image data/enemysprite1.png
+x 579
+y 666
+w 47
+h 47
+
+bullet5_3
+image data/enemysprite1.png
+x 638
+y 666
+w 47
+h 47
+
+rocketUp1
+image data/enemysprite2.png
+x 24
+y 146
+w 33
+h 33
+
+rocket1
+image data/enemysprite2.png
+x 24
+y 189
+w 33
+h 26
+
+rocketDown1
+image data/enemysprite2.png
+x 24
+y 223
+w 33
+h 33
+
+boss_idle1
+image data/enemysprite2.png
+x 290
+y 100
+w 105
+h 163
+
+boss_idle2
+image data/enemysprite2.png
+x 405
+y 100
+w 105
+h 163
+
+boss_idle3
+image data/enemysprite2.png
+x 518
+y 100
+w 110
+h 163
+
+boss_idle4
+image data/enemysprite2.png
+x 637
+y 100
+w 115
+h 163
+
+boss_idle5
+image data/enemysprite2.png
+x 766
+y 100
+w 120
+h 163
+
+boss_shooting1
+image data/enemysprite2.png
+x 730
+y 748
+w 150
+h 180
+
+boss_shooting2
+image data/enemysprite2.png
+x 889
+y 748
+w 150
+h 180
+
+boss_slide1
+image data/enemysprite2.png
+x 220
+y 660
+w 166
+h 67
+
+boss_slide2
+image data/enemysprite2.png
+x 396
+y 660
+w 166
+h 67
+
+boss_slide3
+image data/enemysprite2.png
+x 566
+y 660
+w 166
+h 67
+
+boss_slide4
+image data/enemysprite2.png
+x 736
+y 660
+w 166
+h 67
+
+hearth
+image data/megasprite.png
+x 35
+y 1388
+w 30
+h 30
+
+gamewin
+image data/textgame.png
+x 80
+y 60
+w 440
+h 60

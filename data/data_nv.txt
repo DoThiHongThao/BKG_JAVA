@@ -1,0 +1,13 @@
+6
+
+data/nv1.txt
+
+data/nv2.txt
+
+data/boss1.txt
+
+data/bat.txt
+
+data/quai1.txt
+
+data/background_map.txt

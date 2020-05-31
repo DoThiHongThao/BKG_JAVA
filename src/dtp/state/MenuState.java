@@ -25,7 +25,8 @@ public class MenuState extends State implements MouseListener{
 	private int NUMBER_OF_LABEL;
     private BufferedImage bufferedImage;
     public Graphics graphicsPaint;
-    
+	
+	private boolean music = true; 
     
     Lables[] lables;
     public MenuState(final GamePanel gamePanel) throws IOException {
@@ -85,7 +86,15 @@ public class MenuState extends State implements MouseListener{
 		}
     	gamePanel.addMouseListener(this);
     }
-    
+	
+	public boolean isMusic() {
+		return music;
+	}
+
+	public void setMusic(boolean music) {
+		this.music = music;
+	}
+	
     @Override
     public void Update() {}
     
@@ -102,8 +111,8 @@ public class MenuState extends State implements MouseListener{
         }
 
         final Image image = new ImageIcon("data/bg-01.png").getImage();
-        graphicsPaint.drawImage(image, 0, 0, bufferedImage.getWidth(), bufferedImage.getHeight(), null);
-      
+		graphicsPaint.drawImage(image, 0, 0, bufferedImage.getWidth(), bufferedImage.getHeight(), null);
+		
         for(int i=0; i< NUMBER_OF_LABEL; i++) {
         	if(lables[i].getSet() == true)
         		lables[i].draw((Graphics2D) graphicsPaint);
@@ -113,9 +122,8 @@ public class MenuState extends State implements MouseListener{
     @Override
     public BufferedImage getBufferedImage() {
         return bufferedImage;
-    }
-   
- 
+	}
+	
     private Boolean Compare(final MouseEvent e, final Lables l1) {
     	if(e.getX() >= l1.getX() && e.getY()>=l1.getY()) {
     		if(e.getX() <= l1.getX() + l1.getWidth() && e.getY() <= l1.getY() + l1.getHeight())
@@ -128,7 +136,7 @@ public class MenuState extends State implements MouseListener{
 	public void mouseClicked(final MouseEvent e) {
 
 		if(Compare(e, lables[0]) ) {
-			gamePanel.setState(new GameWorld(gamePanel));
+			gamePanel.setState(new GameWorld(gamePanel, isMusic()));
 		}
 		if(Compare(e, lables[1])) {
 			try {
@@ -141,6 +149,8 @@ public class MenuState extends State implements MouseListener{
 		if(Compare(e, lables[4])) {
 			lables[4].change();
 			lables[4].draw((Graphics2D)graphicsPaint);
+			if(isMusic()) setMusic(false);
+			else setMusic(true);
 		}
 		if(Compare(e, lables[2])) {
 			System.exit(0);

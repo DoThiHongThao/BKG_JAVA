@@ -17,10 +17,10 @@ public class GameMain extends JFrame{
 	public static final int SCREEN_WIDTH = 1000;
 	public static final int SCREEN_HEIGHT = 600;
 
-	private String framefile = "data/frames.txt";
-    private String animationfile = "data/animations.txt";
-    private String physmapfile = "data/phys_map.txt";
-    private String backgroundmapfile = "data/background_map.txt";
+	private String framefile = "data/data_nv.txt";
+    private String animationfile = "data/data_animation.txt";
+    private String physmapfile = "data/physmap.txt";
+    private String backgroundmapfile = "data/bgmap.txt";
 	
 	GamePanel gamepanel;
 	

@@ -29,6 +29,7 @@ public class BackgroundMap extends GameObject{
 			for(int j = 0; j < backmap[0].length; j++) {
 				if(backmap[i][j] != 0 && j * titleSize - camera.getPosX() > -30 && j * titleSize - camera.getPosX() < GameMain.SCREEN_WIDTH
 					&& i * titleSize - camera.getPosY() > -30 && i * titleSize - camera.getPosY() < GameMain.SCREEN_HEIGHT) {
+
 					g2.drawImage(DataLoader.getInstance().getFrameImage("tiled"+backmap[i][j]).getImage(), (int) getPosX() + j * titleSize - (int) camera.getPosX(),
 							(int) getPosY() + i * titleSize - (int) camera.getPosY(), null);
 				}

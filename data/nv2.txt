@@ -483,14 +483,14 @@ y 680
 w 80
 h 102
 
-nhay6
+landing1
 image data/nv2.png
 x 1213
 y 682
 w 73
 h 101
 
-nhay7
+landing2
 image data/nv2.png
 x 1294
 y 692
