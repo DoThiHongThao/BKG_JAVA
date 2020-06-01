@@ -1,0 +1,22 @@
+7
+
+redeye
+redeye1 170000000 redeye2 170000000
+
+rocketUp
+rocketUp1 70000000
+
+rocketDown
+rocketDown1 70000000
+
+rocket
+rocket1 70000000
+
+boss_idle
+boss_idle1 500000000 boss_idle2 130000000 boss_idle3 130000000 boss_idle4 130000000 boss_idle5 130000000 boss_idle4 130000000 boss_idle3 130000000 boss_idle2 130000000
+
+boss_shooting
+boss_shooting1 500000000 boss_shooting2 500000000
+
+boss_slide
+boss_slide1 500000000 boss_slide2 500000000 boss_slide3 500000000 boss_slide4 500000000 

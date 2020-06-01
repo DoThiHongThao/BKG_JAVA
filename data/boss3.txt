@@ -1,0 +1,112 @@
+15
+
+smallredgun1
+image data/enemysprite1.png
+x 87
+y 587
+w 60
+h 39
+
+
+
+darkraise1
+image data/enemysprite1.png
+x 2
+y 670
+w 127
+h 80
+
+darkraise2
+image data/enemysprite1.png
+x 134
+y 675
+w 121
+h 80
+
+darkraise3
+image data/enemysprite1.png
+x 265
+y 681
+w 110
+h 80
+
+
+
+
+dangerousgirl1
+image data/enemysprite1.png
+x 0
+y 114
+w 100
+h 97
+
+dangerousgirl2
+image data/enemysprite1.png
+x 109
+y 114
+w 99
+h 97
+
+dangerousgirl3
+image data/enemysprite1.png
+x 234
+y 114
+w 70
+h 97
+
+dangerousgirl4
+image data/enemysprite1.png
+x 338
+y 114
+w 106
+h 97
+
+dangerousgirl5
+image data/enemysprite1.png
+x 436
+y 114
+w 104
+h 97
+
+dangerousgirl6
+image data/enemysprite1.png
+x 546
+y 114
+w 109
+h 97
+
+dangerousgirl7
+image data/enemysprite1.png
+x 670
+y 114
+w 76
+h 97
+
+dangerousgirl8
+image data/enemysprite1.png
+x 768
+y 114
+w 82
+h 97
+
+robotR1
+image data/enemysprite1.png
+x 491
+y 536
+w 100
+h 114
+
+robotR2
+image data/enemysprite1.png
+x 606
+y 536
+w 100
+h 114
+
+robotR3
+image data/enemysprite1.png
+x 723
+y 536
+w 100
+h 114
+

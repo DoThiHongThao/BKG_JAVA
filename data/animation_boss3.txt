@@ -1,0 +1,13 @@
+4
+
+smallredgun
+smallredgun1 170000000
+
+darkraise
+darkraise1 120000000 darkraise2 120000000 darkraise3 120000000 darkraise2 120000000
+
+dangerousgirl
+dangerousgirl1 70000000 dangerousgirl2 70000000 dangerousgirl3 70000000 dangerousgirl4 70000000 dangerousgirl5 70000000 dangerousgirl6 70000000 dangerousgirl7 70000000 dangerousgirl8 70000000
+
+robotR
+robotR1 70000000 robotR2 70000000 robotR3 70000000 robotR2 70000000
