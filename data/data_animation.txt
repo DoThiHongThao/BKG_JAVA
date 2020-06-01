@@ -1,0 +1,9 @@
+4
+
+data/animation_nv1.txt
+
+data/animation_boss.txt
+
+data/animation_bat.txt
+
+data/animation_quai1.txt

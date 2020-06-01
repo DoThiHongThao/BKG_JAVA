@@ -39,9 +39,11 @@ public abstract class ParticularObject extends GameObject {
 	
 	private long startTimeNoBeHurt;             // thoi gian bat dau khi k trung dan
     private long timeForNoBeHurt;               // thoi gian khi k trung dan
+
+    private boolean music;                      // set music
     
     public ParticularObject(float x, float y, float width, float height, float mass,
-    int blood, GameWorld gameWorld) {
+    int blood, GameWorld gameWorld, boolean music) {
         super(x, y, gameWorld);
 
         this.width = width;
@@ -49,6 +51,7 @@ public abstract class ParticularObject extends GameObject {
         this.mass = mass;
         this.blood = blood;
 
+        this.music = music;
         direction = RIGHT_DIR;
     }
 
@@ -95,6 +98,8 @@ public abstract class ParticularObject extends GameObject {
     public int getBlood() {
         return blood;
     }
+
+    
 
     public void setBlood(int blood) {
         if(this.blood >= 0){
@@ -165,6 +170,14 @@ public abstract class ParticularObject extends GameObject {
     public void setTimeForNoBeHurt(long timeForNoBeHurt) {
         this.timeForNoBeHurt = timeForNoBeHurt;
     }
+
+    public boolean isMusic() {
+        return music;
+    }
+
+    public void setMusic(boolean music) {
+        this.music = music;
+    };
 
     public abstract void attack();
     
@@ -261,6 +274,6 @@ public abstract class ParticularObject extends GameObject {
     public abstract Rectangle getBoundForCollisionWithEnemy();
 	public abstract void draw(Graphics2D g2);
 	
-	public void hurtingCallback() {};
+	public void hurtingCallback() {}
 
 }

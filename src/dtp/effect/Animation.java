@@ -53,16 +53,16 @@ public class Animation {
         this.isRepeated = isRepeated;
     }
 
-    public boolean isIgnoreFrame(final int id) {
+    public boolean isIgnoreFrame(int id) {
         return ignoreFrames.get(id);
     }
 
-    public void setIgnoreFrame(final int id) {
+    public void setIgnoreFrame(int id) {
         if (id >= 0 && id < ignoreFrames.size())
             ignoreFrames.set(id, true);
     }
 
-    public void unIgnoreFrame(final int id) {
+    public void unIgnoreFrame(int id) {
         if (id >= 0 && id < ignoreFrames.size())
             ignoreFrames.set(id, false);
     }

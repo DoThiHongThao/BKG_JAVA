@@ -1,211 +1,210 @@
-
 30
 
 
-dung1
+boss_dung1
 image data/boss1.png
 x 39
 y 16
 w 62
 h 93
 
-dung2
+boss_dung2
 image data/boss1.png
 x 114
 y 17
 w 64
 h 91
 
-dung3
+boss_dung3
 image data/boss1.png
 x 183
 y 15
 w 66
 h 93
 
-dung4
+boss_dung4
 image data/boss1.png
 x 256
 y 17
 w 63
 h 90
 
-dung5
+boss_dung5
 image data/boss1.png
 x 329
 y 19
 w 63
 h 90
 
-dung6
+boss_dung6
 image data/boss1.png
 x 398
 y 18
 w 65
 h 89
 
-ban1
+boss_ban1
 image data/boss1.png
 x 36
 y 116
 w 82
 h 88
 
-ban2
+boss_ban2
 image data/boss1.png
 x 122
 y 116
 w 74
 h 85
 
-ban3
+boss_ban3
 image data/boss1.png
 x 197
 y 117
 w 73
 h 89
 
-ban4
+boss_ban4
 image data/boss1.png
 x 275
 y 114
 w 67
 h 91
 
-ban5
+boss_ban5
 image data/boss1.png
 x 350
 y 115
 w 60
 h 88
 
-ban6
+boss_ban6
 image data/boss1.png
 x 432
 y 158
 w 64
 h 27
 
-chet1
+boss_chet1
 image data/boss1.png
 x 43
 y 223
 w 63
 h 91
 
-chet2
+boss_chet2
 image data/boss1.png
 x 121
 y 226
 w 69
 h 89
 
-chet3
+boss_chet3
 image data/boss1.png
 x 202
 y 238
 w 79
 h 71
 
-chet4
+boss_chet4
 image data/boss1.png
 x 297
 y 247
 w 89
 h 65
 
-chet5
+boss_chet5
 image data/boss1.png
 x 392
 y 245
 w 89
 h 70
 
-di1
+boss_di1
 image data/boss1.png
 x 39
 y 316
 w 66
 h 88
 
-di2
+boss_di2
 image data/boss1.png
 x 113
 y 314
 w 63
 h 90
 
-di3
+boss_di3
 image data/boss1.png
 x 182
 y 314
 w 60
 h 92
 
-di4
+boss_di4
 image data/boss1.png
 x 252
 y 312
 w 59
 h 93
 
-di5
+boss_di5
 image data/boss1.png
 x 322
 y 312
 w 62
 h 94
 
-di6
+boss_di6
 image data/boss1.png
 x 396
 y 316
 w 67
 h 88
 
-di7
+boss_di7
 image data/boss1.png
 x 471
 y 317
 w 62
 h 88
 
-di8
+boss_di8
 image data/boss1.png
 x 550
 y 320
 w 66
 h 89
 
-di9
+boss_di9
 image data/boss1.png
 x 618
 y 314
 w 61
 h 93
 
-di10
+boss_di10
 image data/boss1.png
 x 681
 y 314
 w 67
 h 92
 
-di11
+boss_di11
 image data/boss1.png
 x 755
 y 313
 w 62
 h 92
 
-di12
+boss_di12
 image data/boss1.png
 x 824
 y 314
 w 62
 h 93
 
-di13
+boss_di13
 image data/boss1.png
 x 888
 y 315

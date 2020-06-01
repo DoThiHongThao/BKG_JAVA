@@ -7,7 +7,7 @@ import dtp.state.GameWorld;
 public abstract class Bullet extends ParticularObject{
     
     public Bullet(float x, float y, float width, float height, float mass, int damage, GameWorld gameWorld) {
-		super(x, y, width, height, mass, 1, gameWorld);
+		super(x, y, width, height, mass, 1, gameWorld, true);
 		setDamage(damage);
     }
     

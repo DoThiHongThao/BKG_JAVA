@@ -9,10 +9,10 @@ public abstract class Human extends ParticularObject {
     private boolean isJumping; // trang thai bay
 	private boolean isDicking; // trang thai ngoi
 	
-    private boolean isLanding; // trang thai dung
+	private boolean isLanding; // trang thai dung
     
-    public Human(float x, float y, float width, float height, float mass, int blood, GameWorld gameWorld) {
-		super(x, y, width, height, mass, blood, gameWorld);
+    public Human(float x, float y, float width, float height, float mass, int blood, GameWorld gameWorld, boolean music) {
+		super(x, y, width, height, mass, blood, gameWorld, music);
 		setState(ALIVE);
     }
     
@@ -48,7 +48,7 @@ public abstract class Human extends ParticularObject {
 
     public void setLanding(boolean isLanding) {
         this.isLanding = isLanding;
-    }
+	}
     
     @Override
 	public void Update() {
@@ -105,4 +105,5 @@ public abstract class Human extends ParticularObject {
 			}
 		}
 	}
+
 }
