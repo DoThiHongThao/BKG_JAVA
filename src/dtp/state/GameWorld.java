@@ -5,7 +5,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 import dtp.camera.Camera;
 import dtp.effect.DataLoader;
@@ -36,7 +35,7 @@ public class GameWorld extends State {
     private ParticularObjectManager particularObjectManager;
     private BackgroundMap backgroundMap;
 
-    public static final int finalBossX = 900;
+    public static final int finalBossX = 800;
     public static final int INIT_GAME = 0;
     public static final int TUTORIAL = 1;
     public static final int GAMEPLAY = 2;
@@ -69,7 +68,7 @@ public class GameWorld extends State {
         this.music = music;
 
         bufferedImage = new BufferedImage(GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
-        ninja = new Ninja(60, 1040, this, music);
+        ninja = new Ninja(50, 1300, this, music);
         physicalMap = new PhysicalMap(0, 0, this);
         backgroundMap = new BackgroundMap(0, 0, this);
         camera = new Camera(0, 50, GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, this);
@@ -83,7 +82,7 @@ public class GameWorld extends State {
     }
 
     private void initEnemies() {
-        ParticularObject redeye = new RedEyeDevil(690, 1050, this, isMusic());
+        ParticularObject redeye = new RedEyeDevil(690, 1350, this, isMusic());
         redeye.setDirection(ParticularObject.LEFT_DIR);
         redeye.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(redeye);
@@ -92,19 +91,19 @@ public class GameWorld extends State {
         darkraise.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(darkraise);
 
-        ParticularObject darkraise2 = new DarkRaise(1410, 1400, this, isMusic());
+        ParticularObject darkraise2 = new DarkRaise(1410, 1310, this, isMusic());
         darkraise2.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(darkraise2);
 
-        ParticularObject bat = new Bat(150, 1320, this, isMusic());
+        ParticularObject bat = new Bat(350, 1320, this, isMusic());
         bat.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(bat);
 
-        ParticularObject robotR = new RobotR(570, 1410, this, isMusic());
+        ParticularObject robotR = new RobotR(570, 1310, this, isMusic());
         robotR.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(robotR);
 
-        ParticularObject robotR2 = new RobotR(570, 1200, this, isMusic());
+        ParticularObject robotR2 = new RobotR(570, 1300, this, isMusic());
         robotR2.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(robotR2);
     }
@@ -183,6 +182,7 @@ public class GameWorld extends State {
     private void TutorialRender(Graphics2D g2) {
         switch (tutorialState) {
             case INTROGAME:
+                physicalMap.draw(g2);
                 int yMid = GameMain.SCREEN_HEIGHT / 2 - 15;
                 int y1 = yMid - GameMain.SCREEN_HEIGHT / 2 - openIntroGameY / 2;
                 int y2 = yMid + openIntroGameY / 2;
@@ -225,7 +225,7 @@ public class GameWorld extends State {
                     tutorialState = MEETFINALBOSS;
                     storyTutorial = 0;
                     openIntroGameY = 550;
-                    boss = new FinalBoss(finalBossX + 700, 460, this, isMusic());
+                    boss = new FinalBoss(finalBossX + 280, 1300, this, isMusic());
                     boss.setTeamType(ParticularObject.ENEMY_TEAM);
                     boss.setDirection(ParticularObject.LEFT_DIR);
                     particularObjectManager.addObject(boss);
@@ -290,7 +290,7 @@ public class GameWorld extends State {
 
                     String diem = String.valueOf(getScore());
                     g2.setColor(Color.YELLOW);
-                    g2.drawString(diem, GameMain.SCREEN_WIDTH - 100, GameMain.SCREEN_HEIGHT - 10);
+                    g2.drawString("SCORE: " +diem.toString(),GameMain.SCREEN_WIDTH - 100, 20);
                     for (int i = 0; i < numberOfLife; i++) {
                         g2.drawImage(DataLoader.getInstance().getFrameImage("hearth").getImage(), 20 + i * 40, 18,
                                 null);
@@ -383,8 +383,8 @@ public class GameWorld extends State {
             case KeyEvent.VK_ENTER:
                 if (state == GAMEOVER || state == GAMEWIN) {
                     try {
-                        gamePanel.setState(new MenuState(gamePanel));
-                    } catch (IOException e) {
+                        gamePanel.setState(new MenuStates(gamePanel));
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else if (state == PAUSEGAME) {

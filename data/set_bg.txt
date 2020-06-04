@@ -1,0 +1,141 @@
+20
+
+tiled91
+image data/set_bg.png
+x 13
+y 24
+w 33
+h 16
+
+tiled68
+image data/set_bg.png
+x 51
+y 7
+w 33
+h 33
+
+tiled66
+image data/set_bg.png
+x 88
+y 7
+w 33
+h 33
+
+tiled44
+image data/set_bg.png
+x 127
+y 23
+w 33
+h 17
+
+tiled19
+image data/set_bg.png
+x 12
+y 46
+w 33
+h 33
+
+tiled18
+image data/set_bg.png
+x 50
+y 48
+w 33
+h 33
+
+tiled8
+image data/set_bg.png
+x 88
+y 47
+w 33
+h 33
+
+tiled11
+image data/set_bg.png
+x 127
+y 46
+w 33
+h 33
+
+tiled57
+image data/set_bg.png
+x 13
+y 85
+w 33
+h 33
+
+tiled56
+image data/set_bg.png
+x 51
+y 85
+w 33
+h 33
+
+set11
+image data/set_bg.png
+x 89
+y 85
+w 32
+h 33
+
+set12
+image data/set_bg.png
+x 128
+y 85
+w 32
+h 33
+
+tiled77
+image data/set_bg.png
+x 179
+y 15
+w 29
+h 33
+
+tiled20
+image data/set_bg.png
+x 222
+y 15
+w 32
+h 31
+
+tiled99
+image data/set_bg.png
+x 278
+y 12
+w 27
+h 9
+
+mui_ten
+image data/set_bg.png
+x 178
+y 62
+w 35
+h 28
+
+hoi
+image data/set_bg.png
+x 228
+y 64
+w 28
+h 25
+
+tiled27
+image data/set_bg.png
+x 278
+y 69
+w 32
+h 21
+
+tiled88
+image data/set_bg.png
+x 182
+y 129
+w 23
+h 83
+
+tiled45
+image data/set_bg.png
+x 11
+y 138
+w 33
+h 27

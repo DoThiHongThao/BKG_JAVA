@@ -1,0 +1,48 @@
+8
+Instruction
+x 225
+y 50
+w 2665
+h 2960
+
+Exit
+x 2657
+y 3153
+w 423
+h 432
+
+WinLose
+x 3200
+y 50
+w 2585
+h 2920
+
+score
+x 6105
+y 377
+w 888
+h 136
+
+Play
+x 177
+y 3193
+w 1032
+h 376
+
+Replay
+x 1305
+y 3193
+w 1008
+h 368
+
+Win
+x 3320
+y 3113
+w 1210
+h 240
+
+Lose
+x 4880
+y 3105
+w 1305
+h 255

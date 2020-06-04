@@ -8,4 +8,4 @@ data/bat.txt
 
 data/quai1.txt
 
-data/background_map.txt
+data/set_bg.txt

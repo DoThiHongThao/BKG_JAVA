@@ -139,7 +139,7 @@ public class DataLoader {
 		double b;
 		do {
 		b = System.currentTimeMillis();
-		}while(b - a < 10000);
+        }while(b - a < 1000);
 		
 		LoadMain.setVisible(false);
     }
@@ -216,8 +216,9 @@ public class DataLoader {
         for (int i = 0; i < numberOfRows; i++) {
             line = br.readLine();
             String[] str = line.split(" ");
-            for (int j = 0; j < numberOfColumns; j++)
+            for (int j = 0; j < numberOfColumns; j++){
                 instance.phys_map[i][j] = Integer.parseInt(str[j]);
+            }
         }
         br.close();
     }
@@ -303,11 +304,10 @@ public class DataLoader {
                     while ((line = br1.readLine()).equals("")) ;
 
                     int m = Integer.parseInt(line);
-
-                    for (int i = 1; i <= m; i++) {
+                    int i;
+                    for (i = 1; i <= m; i++) {
 
                         if(i == ((m * n *j)/12)) {
-
                             zoroJLabel.setBounds(111+34*(j+k * 12 /n), 60, 100, 90);
                             if((j+k * 12 /n) == 1)
                                 ldJLabel[(j+k * 12 /n)].setBounds(111+33, 125, 60, 79);
@@ -315,7 +315,6 @@ public class DataLoader {
                             
                             LoadMain.setVisible(true);
                             j++;
-
                         }
 
                         FrameImage frame = new FrameImage();
@@ -347,6 +346,11 @@ public class DataLoader {
                         frame.setImage(image);
 
                         instance.frameImages.put(frame.getName(), frame);
+                    }
+                    if(i-1==m && j-1 <= 12/n){
+                        zoroJLabel.setBounds(111+34*(j+k * 12 /n), 60, 100, 90);
+                        ldJLabel[(j+k * 12 /n)].setBounds(111+34*(j+k * 12 /n), 125, 60, 79);
+
                     }
                 }
             }

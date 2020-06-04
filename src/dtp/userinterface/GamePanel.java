@@ -7,7 +7,8 @@ import java.io.IOException;
 
 import javax.swing.JPanel;
 
-import dtp.state.MenuState;
+// import dtp.state.MenuState;
+import dtp.state.MenuStates;
 import dtp.state.State;
 
 public class GamePanel extends JPanel implements Runnable, KeyListener{
@@ -22,7 +23,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
     public boolean isRunning = true;
 
     public GamePanel() throws IOException {
-        gameState = new MenuState(this);
+        gameState = new MenuStates(this);
         inputManager = new InputManager(gameState);
     }
 
@@ -59,6 +60,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 
     public void paint(Graphics g) {
         g.drawImage(gameState.getBufferedImage(), 0, 0, this);
+        
     }
 
     @Override

@@ -14,7 +14,7 @@ import dtp.state.GameWorld;
 @SuppressWarnings("deprecation")
 public class Ninja extends Human {
 
-    public static final int RUNSPEED = 5;
+    public static final int RUNSPEED = 7;
 
     private Animation runForwardAnimation, runBackAnimation, runShootingForwarAnimation, runShootingBackAnimation;
     private Animation idleForwardAnimation, idleBackAnimation, idleShootingForwardAnimation, idleShootingBackAnimation;

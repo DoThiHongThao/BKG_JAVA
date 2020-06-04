@@ -1,37 +1,179 @@
-6
+2
 
-Play
-x 217
-y 161
-w 2001
-h 625
+8
+data/setmenu.png
 
-Options
-x 193
-y 841
-w 2001
-h 625
+play2
+x 2657
+y 200
+w 1872
+h 570
+
+instruction2
+x 2657
+y 1005
+w 1872
+h 570
+
+exit2
+x 2657
+y 1817
+w 1872
+h 570
+
+sound2
+x 2133
+y 733
+w 310
+h 320
+
+play1
+x 177
+y 209
+w 1892
+h 576
+
+instruction1
+x 177
+y 1033
+w 1892
+h 576
+
+exit1
+x 177
+y 1800
+w 1892
+h 576
+
+sound1
+x 2133
+y 273
+w 300
+h 320
+
+8
+data/hd.png
+
+Instruction
+x 32
+y 12
+w 464
+h 520
 
 Exit
+x 456
+y 552
+w 71
+h 81
+
+WinLose
+x 511
+y 22
+w 494
+h 500
+
+score
+x 1057
+y 72
+w 153
+h 22
+
+Play
+x 22
+y 562
+w 183
+h 61
+
+Replay
 x 217
-y 2129
-w 2001
-h 625
+y 561
+w 178
+h 66
 
-Credits
-x 209
-y 1489
-w 2001
-h 625
+Win
+x 573
+y 549
+w 211
+h 43
 
-SoundOn
-x 2737
-y 825
-w 513
-h 529
+Lose
+x 843
+y 548
+w 229
+h 43
 
-SoundOff
-x 2705
-y 201
-w 513
-h 529
+12
+data/hd.png
+
+hd1
+x 8
+y 4
+w 450
+h 600
+
+thoat
+x 109
+y 132
+w 19
+h 19
+
+hd2
+x 132
+y 5
+w 110
+h 120
+
+play
+x 6
+y 135
+w 44
+h 17
+
+replay
+x 53
+y 134
+w 45
+h 17
+
+win
+x 137
+y 132
+w 54
+h 15
+
+lose
+x 202
+y 132
+w 58
+h 15
+
+your_score
+x 254
+y 17
+w 37
+h 6
+
+level
+x 254
+y 31
+w 17
+h 7
+
+level_x
+x 281
+y 32
+w 14
+h 7
+
+khung_diem
+x 251
+y 47
+w 50
+h 15
+
+score
+x 253
+y 72
+w 26
+h 6
+
