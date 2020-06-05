@@ -14,7 +14,7 @@ import dtp.state.GameWorld;
 @SuppressWarnings("deprecation")
 public class Ninja extends Human {
 
-    public static final int RUNSPEED = 7;
+    public static final int RUNSPEED = 10;
 
     private Animation runForwardAnimation, runBackAnimation, runShootingForwarAnimation, runShootingBackAnimation;
     private Animation idleForwardAnimation, idleBackAnimation, idleShootingForwardAnimation, idleShootingBackAnimation;
@@ -31,7 +31,7 @@ public class Ninja extends Human {
     private AudioClip shooting1;
 
     public Ninja(float x, float y, GameWorld gameWorld, boolean music) {
-        super(x, y, 70, 90, 0.1f, 100, gameWorld, music);
+        super(x, y, 70, 90, 0.3f, 100, gameWorld, music);
 
         shooting1 = DataLoader.getInstance().getSounds("bluefireshooting");
         hurtingSound = DataLoader.getInstance().getSounds("megamanhurt");
@@ -70,12 +70,12 @@ public class Ninja extends Human {
 		behurtBackAnimation = DataLoader.getInstance().getAnimation("trung_chieu");
 		behurtBackAnimation.flipAllImage();
 		
-		idleShootingForwardAnimation = DataLoader.getInstance().getAnimation("dung_chem");
-		idleShootingBackAnimation = DataLoader.getInstance().getAnimation("dung_chem");
+		idleShootingForwardAnimation = DataLoader.getInstance().getAnimation("chem");
+		idleShootingBackAnimation = DataLoader.getInstance().getAnimation("chem");
 		idleShootingBackAnimation.flipAllImage();
 		
-		runShootingForwarAnimation = DataLoader.getInstance().getAnimation("chem");
-		runShootingBackAnimation = DataLoader.getInstance().getAnimation("chem");
+		runShootingForwarAnimation = DataLoader.getInstance().getAnimation("dung_chem");
+		runShootingBackAnimation = DataLoader.getInstance().getAnimation("dung_chem");
 		runShootingBackAnimation.flipAllImage();
 		
 		flyShootingForwardAnimation = DataLoader.getInstance().getAnimation("nhay_chem");
@@ -139,7 +139,7 @@ public class Ninja extends Human {
 		
 		if(!isJumping()) {
 			setJumping(true);
-			setSpeedY(-5.0f);
+			setSpeedY(-6.0f);
 			flyBackAnimation.reset();
 			flyForwardAnimation.reset();
 		}
@@ -152,13 +152,13 @@ public class Ninja extends Human {
 			rectLeftWall.x -= 1;
 			
 			if(getGameWorld().getPhysicalMap().haveCollisionWithRightWall(rectRightWall) != null && getSpeedX() > 0) {
-				setSpeedY(-5.0f);
+				setSpeedY(-6.0f);
 				
 				flyBackAnimation.reset();
 				flyForwardAnimation.reset();
 				
 			}else if(getGameWorld().getPhysicalMap().haveCollisionWithLeftWall(rectLeftWall) != null && getSpeedX() < 0) {
-				setSpeedY(-5.0f);
+				setSpeedY(-6.0f);
 				
 				flyBackAnimation.reset();
 				flyForwardAnimation.reset();

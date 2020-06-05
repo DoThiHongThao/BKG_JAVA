@@ -40,16 +40,16 @@ ninja_truot
 truot4 5000000 truot5 5000000 truot6 5000000 truot4 15000000
 
 ninja_chay
-chay1 50000000 chay2 5000000 chay3 5000000 chay4 5000000 chay5 5000000 chay6 5000000 chay1 15000000
+chay1 20000000 chay2 10000000 chay3 10000000 chay4 10000000 chay5 10000000 chay6 10000000 chay1 11000000
 
 trung_chieu
 trung_chieu1 5000000 trung_chieu2 5000000 trung_chieu3 5000000 trung_chieu1 15000000
 
 lon_vong
-lon_vong1 5000000 lon_vong2 5000000 lon_vong3 5000000 lon_vong4 5000000 lon_vong5 5000000 lon_vong6 5000000 lon_vong7 5000000 lon_vong1 15000000
+lon_vong1 2000000 lon_vong2 2000000 lon_vong3 2000000 lon_vong4 2000000 lon_vong5 2000000 lon_vong6 2000000 lon_vong7 2000000 lon_vong1 12000000
 
 landing
-lon_vong8 5000000 lon_vong9 5000000 lon_vong9 5000000
+lon_vong8 2000000 lon_vong9 2000000 lon_vong9 2000000
 
 dung_tr
 dung_tr1 5000000 dung_tr2 5000000 dung_tr3 5000000 dung_tr4 5000000 dung_tr5 5000000 dung_tr1 15000000

@@ -138,6 +138,7 @@ public class MenuStates extends State implements MouseListener {
     public void Update() {
         switch(getState()){
             case 0:
+                this.state = 0;
                 break;
             case 1:
                 lables[8].setBound(GameMain.SCREEN_WIDTH/2 - 200, 
@@ -215,6 +216,7 @@ public class MenuStates extends State implements MouseListener {
                 if(Compare(e, lables[9])){
                     lables[1].change();
                     this.setState(0);
+                    Update();
                 }
                 break;
         }

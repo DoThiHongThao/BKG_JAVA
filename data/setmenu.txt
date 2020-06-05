@@ -51,7 +51,7 @@ y 273
 w 300
 h 320
 
-8
+2
 data/hd.png
 
 Instruction

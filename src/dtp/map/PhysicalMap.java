@@ -17,7 +17,7 @@ public class PhysicalMap extends GameObject{
     public PhysicalMap(float x, float y, GameWorld gameWorld){
         super(x, y, gameWorld);
 
-        this.titleSize = 30;
+        this.titleSize = 34;
         this.phys_map = DataLoader.getInstance().getPhysicalMap();
     }
 

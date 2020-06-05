@@ -68,7 +68,7 @@ public class GameWorld extends State {
         this.music = music;
 
         bufferedImage = new BufferedImage(GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
-        ninja = new Ninja(50, 1300, this, music);
+        ninja = new Ninja(102, 1830, this, music);
         physicalMap = new PhysicalMap(0, 0, this);
         backgroundMap = new BackgroundMap(0, 0, this);
         camera = new Camera(0, 50, GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, this);
@@ -182,7 +182,6 @@ public class GameWorld extends State {
     private void TutorialRender(Graphics2D g2) {
         switch (tutorialState) {
             case INTROGAME:
-                physicalMap.draw(g2);
                 int yMid = GameMain.SCREEN_HEIGHT / 2 - 15;
                 int y1 = yMid - GameMain.SCREEN_HEIGHT / 2 - openIntroGameY / 2;
                 int y2 = yMid + openIntroGameY / 2;

@@ -21,7 +21,7 @@ public class BackgroundMap extends GameObject {
 	public BackgroundMap(float x, float y, GameWorld gameWorld) {
 		super(x, y, gameWorld);
 		backmap = DataLoader.getInstance().getBackgroundMap();
-		titleSize = 30;
+		titleSize = 34;
 	}
 
 	@Override
