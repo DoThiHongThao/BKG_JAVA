@@ -37,35 +37,26 @@ public class MenuStates extends State implements MouseListener {
 
     @SuppressWarnings("resource")
     private void loadFrame(){
-        lables = new Lables[21];
-        int k = 0;
-        String file = "data/setmenu.txt";
+        lables = new Lables[6];
+        String filetxt = "data/setmenu.txt";
+        String filepng = "data/setmenu.png";
         try {
-            FileReader fr = new FileReader(file);
+            FileReader fr = new FileReader(filetxt);
             BufferedReader br = new BufferedReader(fr);
 
-            String line;
-
-            if (br.readLine() == null) {
-                System.out.println("No data");
-                throw new IOException();
-            }else {
-                fr = new FileReader(file);
-                br = new BufferedReader(fr);
+            String line; 
 
                 while ((line = br.readLine()).equals("")) ;
                 int n = Integer.parseInt(line);
 
                 for(int i = 0; i < n; i++){
-                    while ((line = br.readLine()).equals("")) ;
-                    int m = Integer.parseInt(line);
-
-                    while ((line = br.readLine()).equals("")) ;
-                    String link = line;
-                    for(int j = 0; j < m; j++){
-
                         while ((line = br.readLine()).equals("")) ;
-                        lables[k] = new Lables(line);
+                        if(i < 4)
+                            lables[i] = new Lables(line);
+
+                        if(i >= 8){
+                            lables[(int)((float)i/2+0.5)] = new Lables(line);
+                        }
                         while ((line = br.readLine()).equals("")) ;
                         String[] str = line.split(" ");
                         int x = Integer.parseInt(str[1]);
@@ -82,25 +73,29 @@ public class MenuStates extends State implements MouseListener {
                         str = line.split(" ");
                         int h = Integer.parseInt(str[1]);
 
-                        BufferedImage imageData = ImageIO.read(new File(link));
+                        BufferedImage imageData = ImageIO.read(new File(filepng));
                         BufferedImage image = imageData.getSubimage(x, y, w, h);
 
-                        lables[k].setOpaque(false);
-                        lables[k].setImageIcon1(image);
-                        lables[k].setBound(350 , 100 + (10 + 80)*k, 280, 80);
-                        if(k != 9){
-                            lables[k].addMouseListener(this);
+                        if(i < 4){
+                            lables[i].setOpaque(false);
+                            lables[i].setImageIcon1(image);
+                            lables[i].setBound(350 , 100 + (10 + 80)*i, 280, 80);
+                        
+                            lables[i].addMouseListener(this);
+                            gamePanel.add(lables[i]);
+                        }else if(i < 8){
+                            lables[i - 4].setImageIcon2(image);
                         }
-                        gamePanel.add(lables[j]);
-                        if( m == 8 && k < 8){
-                            if(j > 4){
-                                lables[j - 4].setImageIcon2(image);
-                            }
+                        else {
+                            lables[(int)(i/2.0 + 0.5)].setOpaque(false);
+                            lables[(int)(i/2.0 + 0.5)].setImageIcon1(image);    
+                            gamePanel.add(lables[(int)(i/2.0 + 0.5)]);
                         }
-                        k++;
-                    }
+                        if(i == 7){
+                            filepng = "data/hd.png";
+                        }
                 }
-            }
+
             lables[3].setBound(0, 0, 40, 40);
             br.close();
         } catch (IOException e) {
@@ -140,12 +135,11 @@ public class MenuStates extends State implements MouseListener {
                 this.state = 0;
                 break;
             case 1:
-                lables[8].setBound(GameMain.SCREEN_WIDTH/2 - 200, 
-                GameMain.SCREEN_HEIGHT/2 - 200, 400, 400);
-                lables[8].addMouseListener(this);
-                lables[9].setBound(GameMain.SCREEN_WIDTH/2 + 185, 
+                lables[4].setBound(GameMain.SCREEN_WIDTH/2 - 200, 
+                    GameMain.SCREEN_HEIGHT/2 - 200, 400, 400);
+
+                lables[5].setBound(GameMain.SCREEN_WIDTH/2 + 185, 
                     GameMain.SCREEN_HEIGHT/2 - 152, 40, 40);
-                gamePanel.addMouseListener(this);
                 break;
             case 2:
                 break;
@@ -173,8 +167,8 @@ public class MenuStates extends State implements MouseListener {
                 }
                 break;
             case 1:
-                lables[8].draw((Graphics2D) graphicsPaint);
-                lables[9].draw((Graphics2D) graphicsPaint);
+                lables[4].draw((Graphics2D) graphicsPaint);
+                lables[5].draw((Graphics2D) graphicsPaint);
                 break;
         }
 		
@@ -212,7 +206,7 @@ public class MenuStates extends State implements MouseListener {
                 }
                 break;
             case 1:
-                if(Compare(e, lables[9])){
+                if(Compare(e, lables[4])){
                     lables[1].change();
                     this.setState(0);
                     Update();
