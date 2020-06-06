@@ -47,7 +47,7 @@ public class FinalBoss extends Human{
 
         timeAttack.put("NONE", new Long(2000));
         timeAttack.put("shooting", new Long(500));
-        timeAttack.put("slide", new Long(5000));
+        timeAttack.put("slide", new Long(4000));
     }
 
     public void Update() {
@@ -124,37 +124,37 @@ public class FinalBoss extends Human{
     
     @Override
     public void draw(Graphics2D g2) {
-    	if(getState() == NOBEHURT && (System.nanoTime() / 10000000)%2 != 1) {
-    		
-    	}else {
-    		if(attackType[attackIndex].equals("NONE")) {
-    			if(getDirection() == RIGHT_DIR) {
-    				idleforward.Update(System.nanoTime());
-    				idleforward.draw((int) (getPosX() - getGameWorld().getCamera().getPosX()), (int) getPosY() - (int) getGameWorld().getCamera().getPosY(), g2);
-    			}else {
-    				idleback.Update(System.nanoTime());
-    				idleback.draw((int) (getPosX() - getGameWorld().getCamera().getPosX()), 
-    					(int)getPosY() - (int) getGameWorld().getCamera().getPosY(), g2);
-    			}
-    		}else  if(attackType[attackIndex].equals("shooting")) {
-    			if(getDirection() == RIGHT_DIR) {
-    				shootingforward.Update(System.nanoTime());
-    				shootingforward.draw((int) (getPosX() - getGameWorld().getCamera().getPosX()),
-    				(int)getPosY() - (int)getGameWorld().getCamera().getPosY(), g2);
-    			}else {
-    				shootingback.Update(System.nanoTime());
-    				shootingback.draw((int)(getPosX() - getGameWorld().getCamera().getPosX()),
-    				(int)getPosY() - (int)getGameWorld().getCamera().getPosY(), g2);
-    			}
-    		}else if(attackType[attackIndex].equals("slide")) {
-    			if(getSpeedX() > 0) {
-    				slideforward.Update(System.nanoTime());
-    				slideforward.draw((int)(getPosX() - getGameWorld().getCamera().getPosX()), (int)getPosY() - (int)getGameWorld().getCamera().getPosY() + 50, g2);
-    			}else {
-    				slideback.Update(System.nanoTime());
-    				slideback.draw((int)(getPosX() - getGameWorld().getCamera().getPosX()), (int)getPosY() - (int)getGameWorld().getCamera().getPosY() + 50, g2);
-    			}
-    		}
-    	}
+        if(getState() == NOBEHURT && (System.nanoTime() / 10000000)%2 != 1) {
+            
+        }else {
+            if(attackType[attackIndex].equals("NONE")) {
+                if(getDirection() == RIGHT_DIR) {
+                    idleforward.Update(System.nanoTime());
+                    idleforward.draw((int) (getPosX() - getGameWorld().getCamera().getPosX()), (int) getPosY() - (int) getGameWorld().getCamera().getPosY(), g2);
+                }else {
+                    idleback.Update(System.nanoTime());
+                    idleback.draw((int) (getPosX() - getGameWorld().getCamera().getPosX()), 
+                        (int)getPosY() - (int) getGameWorld().getCamera().getPosY(), g2);
+                }
+            }else  if(attackType[attackIndex].equals("shooting")) {
+                if(getDirection() == RIGHT_DIR) {
+                    shootingforward.Update(System.nanoTime());
+                    shootingforward.draw((int) (getPosX() - getGameWorld().getCamera().getPosX()),
+                    (int)getPosY() - (int)getGameWorld().getCamera().getPosY(), g2);
+                }else {
+                    shootingback.Update(System.nanoTime());
+                    shootingback.draw((int)(getPosX() - getGameWorld().getCamera().getPosX()),
+                    (int)getPosY() - (int)getGameWorld().getCamera().getPosY(), g2);
+                }
+            }else if(attackType[attackIndex].equals("slide")) {
+                if(getSpeedX() > 0) {
+                    slideforward.Update(System.nanoTime());
+                    slideforward.draw((int)(getPosX() - getGameWorld().getCamera().getPosX()), (int)getPosY() - (int)getGameWorld().getCamera().getPosY() + 50, g2);
+                }else {
+                    slideback.Update(System.nanoTime());
+                    slideback.draw((int)(getPosX() - getGameWorld().getCamera().getPosX()), (int)getPosY() - (int)getGameWorld().getCamera().getPosY() + 50, g2);
+                }
+            }
+        }
     }
 }

@@ -12,7 +12,8 @@ import dtp.effect.DataLoader;
 import dtp.gameobject.ParticularObject;
 import dtp.human.Bat;
 import dtp.human.DarkRaise;
-import dtp.human.FinalBoss;
+// import dtp.human.FinalBoss;
+import dtp.human.GreenBoss;
 import dtp.human.Ninja;
 import dtp.human.RedEyeDevil;
 import dtp.human.RobotR;
@@ -74,7 +75,7 @@ public class GameWorld extends State {
         this.music = music;
 
         bufferedImage = new BufferedImage(GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
-        ninja = new Ninja(136, 1800, this, music);
+        ninja = new Ninja(finalBossX, finalBossY, this, music);
         physicalMap = new PhysicalMap(0, 0, this);
         backgroundMap = new BackgroundMap(0, 0, this);
         camera = new Camera(0, 45, GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, this);
@@ -88,7 +89,7 @@ public class GameWorld extends State {
     }
 
     private void initEnemies() {
-        this.BOT = 1;
+        this.BOT = 10;
         ParticularObject redeye = new RedEyeDevil(480, 1696, this, isMusic());
         redeye.setDirection(ParticularObject.LEFT_DIR);
         redeye.setTeamType(ParticularObject.ENEMY_TEAM);
@@ -255,7 +256,7 @@ public class GameWorld extends State {
                     tutorialState = MEETFINALBOSS;
                     storyTutorial = 0;
                     openIntroGameY = 550;
-                    boss = new FinalBoss(finalBossX + 364, finalBossY - 20, this, isMusic());
+                    boss = new GreenBoss(finalBossX + 364, finalBossY - 20, this, isMusic());
                     boss.setTeamType(ParticularObject.ENEMY_TEAM);
                     boss.setDirection(ParticularObject.LEFT_DIR);
                     particularObjectManager.addObject(boss);
