@@ -1,5 +1,7 @@
+2
 
-10
+8
+data/setmenu.png
 
 play2
 x 2657
@@ -49,6 +51,9 @@ y 273
 w 300
 h 320
 
+2
+data/hd.png
+
 Instruction
 x 32
 y 12
@@ -60,4 +65,40 @@ x 456
 y 552
 w 71
 h 81
+
+WinLose
+x 511
+y 22
+w 494
+h 500
+
+score
+x 1057
+y 72
+w 153
+h 22
+
+Play
+x 22
+y 562
+w 183
+h 61
+
+Replay
+x 217
+y 561
+w 178
+h 66
+
+Win
+x 573
+y 549
+w 211
+h 43
+
+Lose
+x 843
+y 548
+w 229
+h 43
 

@@ -21,12 +21,11 @@ import dtp.userinterface.GamePanel;
 public class MenuStates extends State implements MouseListener {
 
     private BufferedImage bufferedImage;
-    public Graphics graphicsPaint;
-	
     private boolean music = true;
     private int state;
     
-    Lables[] lables;
+    public Graphics graphicsPaint;
+    public Lables[] lables;
 
     public MenuStates(GamePanel gamePanel) {
         super(gamePanel);
