@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import dtp.camera.Camera;
+import dtp.control.Lables;
 import dtp.effect.DataLoader;
 import dtp.gameobject.ParticularObject;
 import dtp.human.Bat;
@@ -28,6 +29,8 @@ public class GameWorld extends State {
     private BufferedImage bufferedImage;
     private int lastState;
 
+    Lables[] lable;
+
     private Ninja ninja;
     private PhysicalMap physicalMap;
     private Camera camera;
@@ -35,7 +38,8 @@ public class GameWorld extends State {
     private ParticularObjectManager particularObjectManager;
     private BackgroundMap backgroundMap;
 
-    public static final int finalBossX = 800;
+    public static final int finalBossX = 2270;
+    public static final int finalBossY = 840;
     public static final int INIT_GAME = 0;
     public static final int TUTORIAL = 1;
     public static final int GAMEPLAY = 2;
@@ -51,7 +55,7 @@ public class GameWorld extends State {
     public int tutorialState = INTROGAME;
 
     public int storyTutorial = 0;
-
+    
     private boolean finalbossTrigger = true;
     private boolean music;
 
@@ -62,16 +66,18 @@ public class GameWorld extends State {
 
     public AudioClip bgMusic;
 
+    public int BOT;
+
     public GameWorld(GamePanel gamePanel, boolean music) {
         super(gamePanel);
 
         this.music = music;
 
         bufferedImage = new BufferedImage(GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
-        ninja = new Ninja(102, 1830, this, music);
+        ninja = new Ninja(136, 1800, this, music);
         physicalMap = new PhysicalMap(0, 0, this);
         backgroundMap = new BackgroundMap(0, 0, this);
-        camera = new Camera(0, 50, GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, this);
+        camera = new Camera(0, 45, GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT, this);
         bulletManager = new BulletManager(this);
 
         particularObjectManager = new ParticularObjectManager(this);
@@ -82,30 +88,47 @@ public class GameWorld extends State {
     }
 
     private void initEnemies() {
-        ParticularObject redeye = new RedEyeDevil(690, 1350, this, isMusic());
+        this.BOT = 1;
+        ParticularObject redeye = new RedEyeDevil(480, 1696, this, isMusic());
         redeye.setDirection(ParticularObject.LEFT_DIR);
         redeye.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(redeye);
 
-        ParticularObject darkraise = new DarkRaise(870, 1310, this, isMusic());
+        ParticularObject redeye1 = new RedEyeDevil(2585, 1800, this, isMusic());
+        redeye1.setDirection(ParticularObject.LEFT_DIR);
+        redeye1.setTeamType(ParticularObject.ENEMY_TEAM);
+        particularObjectManager.addObject(redeye1);
+
+        ParticularObject redeye2 = new RedEyeDevil(2390, 1496, this, isMusic());
+        redeye2.setDirection(ParticularObject.RIGHT_DIR);
+        redeye2.setTeamType(ParticularObject.ENEMY_TEAM);
+        particularObjectManager.addObject(redeye2);
+
+        ParticularObject redeye3 = new RedEyeDevil(920, 1292, this, isMusic());
+        redeye3.setDirection(ParticularObject.LEFT_DIR);
+        redeye3.setTeamType(ParticularObject.ENEMY_TEAM);
+        particularObjectManager.addObject(redeye3);
+
+        ParticularObject darkraise = new DarkRaise(950, 1720, this, isMusic());
         darkraise.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(darkraise);
 
-        ParticularObject darkraise2 = new DarkRaise(1410, 1310, this, isMusic());
+        ParticularObject darkraise2 = new DarkRaise(2040, 1200, this, isMusic());
         darkraise2.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(darkraise2);
 
-        ParticularObject bat = new Bat(350, 1320, this, isMusic());
+        ParticularObject bat = new Bat(1938, 1428, this, isMusic());
         bat.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(bat);
 
-        ParticularObject robotR = new RobotR(570, 1310, this, isMusic());
+        ParticularObject robotR = new RobotR(1730, 1700, this, isMusic());
         robotR.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(robotR);
 
-        ParticularObject robotR2 = new RobotR(570, 1300, this, isMusic());
+        ParticularObject robotR2 = new RobotR(1428, 1200, this, isMusic());
         robotR2.setTeamType(ParticularObject.ENEMY_TEAM);
         particularObjectManager.addObject(robotR2);
+
     }
 
     public PhysicalMap getPhysicalMap() {
@@ -168,9 +191,15 @@ public class GameWorld extends State {
                     } else {
                         ninja.stopRun();
                     }
-                    if (openIntroGameY < 450 && camera.getPosX() >= finalBossX && ninja.getPosX() >= finalBossX + 150) {
+                    if (openIntroGameY < 450 && camera.getPosX() >= finalBossX && 
+                            ninja.getPosX() >= finalBossX + 150 && ninja.getPosY() <= finalBossY) {
                         camera.lock();
                         ninja.stopRun();
+                        physicalMap.phys_map[21][89] = 1;
+                        physicalMap.phys_map[22][89] = 1;
+                        physicalMap.phys_map[23][89] = 1;
+                        physicalMap.phys_map[24][89] = 1;
+                        switchState(GAMEPLAY);
                     }
                 }
                 break;
@@ -217,14 +246,16 @@ public class GameWorld extends State {
                 particularObjectManager.UpdateObjects(); // update
                 bulletManager.UpdateObjects(); //
                 physicalMap.Update();
-                camera.Update();
-                if (ninja.getPosX() > finalBossX && finalbossTrigger) {
+                if(ninja.getPosX() <= 2500)
+                    camera.Update();
+                
+                if ((ninja.getPosX() > finalBossX && ninja.getPosY() <= finalBossY) && finalbossTrigger) {
                     finalbossTrigger = false;
                     switchState(TUTORIAL);
                     tutorialState = MEETFINALBOSS;
                     storyTutorial = 0;
                     openIntroGameY = 550;
-                    boss = new FinalBoss(finalBossX + 280, 1300, this, isMusic());
+                    boss = new FinalBoss(finalBossX + 364, finalBossY - 20, this, isMusic());
                     boss.setTeamType(ParticularObject.ENEMY_TEAM);
                     boss.setDirection(ParticularObject.LEFT_DIR);
                     particularObjectManager.addObject(boss);
@@ -242,7 +273,7 @@ public class GameWorld extends State {
                         bgMusic.stop();
                     }
                 }
-                if (!finalbossTrigger && boss.getState() == ParticularObject.DEATH)
+                if (BOT <= 0)
                     switchState(GAMEWIN);
                 break;
             case GAMEOVER:
@@ -268,7 +299,7 @@ public class GameWorld extends State {
                     g2.setColor(Color.BLACK);
                     g2.fillRect(300, 260, 500, 70);
                     g2.setColor(Color.WHITE);
-                    g2.drawString("PRESS ENTER TO CONTINUE", 400, 300);
+                    g2.drawString("PRESS ESC TO CONTINUE", 400, 300);
                     break;
                 case TUTORIAL:
                     backgroundMap.draw(g2);
@@ -295,7 +326,9 @@ public class GameWorld extends State {
                                 null);
                     }
                     if (state == GAMEWIN) {
-                        g2.drawImage(DataLoader.getInstance().getFrameImage("gamewin").getImage(), 300, 300, null);
+                        //g2.drawImage(DataLoader.getInstance().getFrameImage("score").getImage(), 250, 50, null);
+                        createGameWin();
+                        drawGameWin(g2);
                     }
                     break;
                 case GAMEOVER:
@@ -306,6 +339,17 @@ public class GameWorld extends State {
                     break;
             }
         }
+    }
+
+    private void createGameWin(){
+        lable = new Lables[6];
+        lable[0].setOpaque(false);
+        lable[0].setImageIcon1(DataLoader.getInstance().getFrameImage("endgame").getImage());
+        lable[0].setBound(250, 50, 400, 400);
+    }
+
+    private void drawGameWin(Graphics2D g2){
+        lable[0].draw(g2);
     }
 
     @Override
@@ -380,13 +424,8 @@ public class GameWorld extends State {
                     ninja.stopRun();
                 break;
             case KeyEvent.VK_ENTER:
-                if (state == GAMEOVER || state == GAMEWIN) {
-                    try {
-                        gamePanel.setState(new MenuStates(gamePanel));
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                } else if (state == PAUSEGAME) {
+                
+                if (state == PAUSEGAME) {
                     state = lastState;
                 }
                 break;
@@ -395,8 +434,12 @@ public class GameWorld extends State {
             case KeyEvent.VK_A:
                 break;
             case KeyEvent.VK_ESCAPE:
-                lastState = state;
-                state = PAUSEGAME;
+                if(state != PAUSEGAME){
+                    lastState = state;
+                    state = PAUSEGAME;
+                }else{
+                    state = lastState;
+                }
                 break;
         }
     }

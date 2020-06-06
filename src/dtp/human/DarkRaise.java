@@ -2,6 +2,7 @@ package dtp.human;
 
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.util.Random;
 
 import dtp.bullet.FlyBullet;
 import dtp.effect.Animation;
@@ -28,7 +29,7 @@ public class DarkRaise extends ParticularObject{
 		x2 = x + 100;
 		
 		setSpeedX(1);
-		setDamage(10);
+		setDamage(5);
 	}
 	
 	@Override
@@ -37,7 +38,7 @@ public class DarkRaise extends ParticularObject{
 		float NinjaY = getGameWorld().getNinja().getPosY();
 		float deltaX = NinjaX - getPosX();
 		float deltaY = NinjaY - getPosY();
-		float speed = 4;
+		float speed = 5;
 		float a = Math.abs(deltaX/deltaY);
 		float speedX = (float) Math.sqrt(speed * speed * a * a / (a * a +1));
 		float speedY = (float) Math.sqrt(speed * speed / (a * a + 1));
@@ -59,11 +60,18 @@ public class DarkRaise extends ParticularObject{
 			setSpeedX(-1);
 		setPosX(getPosX() + getSpeedX());
 		if(System.nanoTime() - startTimeShoot > 1000 * 10000000 * 1.5) {
+			setDamages();
 			attack();
 			startTimeShoot = System.nanoTime();
 		}
 	}
 	
+	private void setDamages(){
+		Random random = new Random();
+		int damage = 1 + random.nextInt(10);
+		setDamage(damage);
+	}
+
 	@Override
 	public Rectangle getBoundForCollisionWithEnemy() {
 		Rectangle rect = getBoundForCollisionWithMap();

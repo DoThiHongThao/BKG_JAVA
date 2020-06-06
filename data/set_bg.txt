@@ -1,4 +1,4 @@
-18
+24
 
 tiled91
 image data/set_bg.png
@@ -125,3 +125,45 @@ x 8
 y 120
 w 34
 h 34
+
+endgame
+image data/hd.png
+x 511
+y 22
+w 494
+h 500
+
+Win
+image data/hd.png
+x 573
+y 549
+w 211
+h 43
+
+Lose
+image data/hd.png
+x 843
+y 548
+w 229
+h 43
+
+score
+image data/hd.png
+x 1057
+y 72
+w 153
+h 22
+
+Play_end
+image data/hd.png
+x 22
+y 562
+w 183
+h 61
+
+Replay
+image data/hd.png
+x 217
+y 561
+w 178
+h 66

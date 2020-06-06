@@ -99,8 +99,6 @@ public abstract class ParticularObject extends GameObject {
         return blood;
     }
 
-    
-
     public void setBlood(int blood) {
         if(this.blood >= 0){
             this.blood = blood;
@@ -242,7 +240,8 @@ public abstract class ParticularObject extends GameObject {
 				break;
 				
 			case FEY: // gan chet
-				state = DEATH; // chet
+                state = DEATH; // chet
+                this.getGameWorld().BOT--;
 				break;
 				
 			case NOBEHURT: // khong trung dan
@@ -252,7 +251,6 @@ public abstract class ParticularObject extends GameObject {
 				break;
 			
 				default:
-					//getGameWorld().getParticularObjectManager().RemoveObject(this);
 					break;
 		}
     }

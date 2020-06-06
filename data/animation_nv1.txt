@@ -25,7 +25,7 @@ chieu_thuc_keo
 chieu_thuc10 5000000 chieu_thuc11 5000000 chieu_thuc12 5000000 chieu_thuc13 5000000 chieu_thuc14 5000000 chieu_thuc15 5000000 chieu_thuc10 5000000 
 
 chieu_thuc_luoi
-chieu_thuc16 5000000 chieu_thuc17 5000000 chieu_thuc18 5000000 chieu_thuc16 5000000 
+chieu_thuc16 2000000 chieu_thuc17 2000000 chieu_thuc18 2000000 chieu_thuc16 2000000 
 
 chieu_thuc_to
 chieu_thuc19 3000000 chieu_thuc20 3000000 chieu_thuc21 3000000 chieu_thuc22 3000000 chieu_thuc19 3000000
@@ -34,7 +34,7 @@ ninja_dung
 dung1 5000000 dung2 5000000 dung3 5000000 dung4 5000000 dung1 15000000
 
 ninja_ngoi
-ngoi1 5000000 ngoi2 5000000 ngoi3 50000000 ngoi2 50000000
+ngoi2 5000000 ngoi3 50000000 ngoi2 50000000
 
 ninja_truot
 truot4 5000000 truot5 5000000 truot6 5000000 truot4 15000000

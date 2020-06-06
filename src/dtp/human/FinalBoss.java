@@ -24,8 +24,8 @@ public class FinalBoss extends Human{
 
     @SuppressWarnings("deprecation")
 	public FinalBoss(float x, float y, GameWorld gameWorld, boolean music) {
-    	super(x, y, 110, 150, 0.1f, 300, gameWorld, music);
-    	idleback = DataLoader.getInstance().getAnimation("boss_idle");
+        super(x, y, 110, 150, 0.1f, 100, gameWorld, music);
+        idleback = DataLoader.getInstance().getAnimation("boss_idle");
         idleforward = DataLoader.getInstance().getAnimation("boss_idle");
         idleforward.flipAllImage();
 
@@ -88,7 +88,7 @@ public class FinalBoss extends Human{
     public void run() {}
     @Override
     public void jump() {
-    	setSpeedY(-5);
+        setSpeedY(-5);
     }
     @Override
     public void dick() {}
@@ -98,28 +98,28 @@ public class FinalBoss extends Human{
     public void stopRun() {}
     @Override
     public void attack() {
-    	if(System.currentTimeMillis() - lastAttackTime > timeAttack.get(attackType[attackIndex])) {
-    		lastAttackTime = System.currentTimeMillis();
-    		
-    		attackIndex++;
-    		if(attackIndex >= attackType.length) attackIndex = 0;
-    		
-    		if(attackType[attackIndex].equals("slide")) {
-    			if(getPosX() < getGameWorld().getNinja().getPosX()) setSpeedX(5);
-    			else setSpeedX(-5);
-    		}
-    	}
+        if(System.currentTimeMillis() - lastAttackTime > timeAttack.get(attackType[attackIndex])) {
+            lastAttackTime = System.currentTimeMillis();
+            
+            attackIndex++;
+            if(attackIndex >= attackType.length) attackIndex = 0;
+            
+            if(attackType[attackIndex].equals("slide")) {
+                if(getPosX() < getGameWorld().getNinja().getPosX()) setSpeedX(5);
+                else setSpeedX(-5);
+            }
+        }
     }
     
     @Override
     public Rectangle getBoundForCollisionWithEnemy() {
-    	if(attackType[attackIndex].equals("slide")) {
-    		Rectangle rect = getBoundForCollisionWithMap();
-    		rect.y += 100;
-    		rect.height -= 100;
-    		return rect;
-    	}else
-    		return getBoundForCollisionWithMap();
+        if(attackType[attackIndex].equals("slide")) {
+            Rectangle rect = getBoundForCollisionWithMap();
+            rect.y += 100;
+            rect.height -= 100;
+            return rect;
+        }else
+            return getBoundForCollisionWithMap();
     }
     
     @Override

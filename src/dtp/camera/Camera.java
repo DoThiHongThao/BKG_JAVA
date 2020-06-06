@@ -22,10 +22,10 @@ public class Camera extends GameObject {
             Ninja mainCharacter = getGameWorld().getNinja();
 			
 			if(mainCharacter.getPosX() - getPosX() > 400) setPosX(mainCharacter.getPosX() - 400);
-			if(mainCharacter.getPosX() - getPosX() < 200) setPosX(mainCharacter.getPosX() - 200);
+			if(mainCharacter.getPosX() - getPosX() < 200) setPosX(mainCharacter.getPosX() - 85);
 			
-			if(mainCharacter.getPosY() - getPosY() > 400) setPosY(mainCharacter.getPosY() - 400);
-			else if(mainCharacter.getPosY() - getPosY() < 250) setPosY(mainCharacter.getPosY() - 250);
+			if(mainCharacter.getPosY() - getPosY() > 400) setPosY(mainCharacter.getPosY() - 460);
+			else if(mainCharacter.getPosY() - getPosY() < 250) setPosY(mainCharacter.getPosY() - 255);
         }
     }
     

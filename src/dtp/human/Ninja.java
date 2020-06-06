@@ -62,12 +62,8 @@ public class Ninja extends Human {
 		landingBackAnimation = DataLoader.getInstance().getAnimation("landing");
 		landingBackAnimation.flipAllImage();
 		
-		// climWallBack = DataLoader.getInstance().getAnimation("clim_wall");
-		// climWallForward = DataLoader.getInstance().getAnimation("clim_wall");
-		// climWallForward.flipAllImage();
-		
-		behurtForvardAnim = DataLoader.getInstance().getAnimation("trung_chieu");
-		behurtBackAnimation = DataLoader.getInstance().getAnimation("trung_chieu");
+		behurtForvardAnim = DataLoader.getInstance().getAnimation("dung_tr");
+		behurtBackAnimation = DataLoader.getInstance().getAnimation("dung_tr");
 		behurtBackAnimation.flipAllImage();
 		
 		idleShootingForwardAnimation = DataLoader.getInstance().getAnimation("chem");
