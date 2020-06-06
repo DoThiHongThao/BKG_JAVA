@@ -241,7 +241,7 @@ public abstract class ParticularObject extends GameObject {
 				
 			case FEY: // gan chet
                 state = DEATH; // chet
-                this.getGameWorld().BOT--;
+                getGameWorld().BOT--;
 				break;
 				
 			case NOBEHURT: // khong trung dan

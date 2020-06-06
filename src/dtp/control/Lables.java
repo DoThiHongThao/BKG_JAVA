@@ -10,16 +10,12 @@ public class Lables extends JLabel {
     private int x, y, width, height;
     BufferedImage imageIcon, imageIcon2;
 	String image, name;
-	private boolean set;
 	public Lables(String name) {
 		setText(name);
-		set = true;
 	}
 	
 	public void draw(Graphics2D graphics2d) {
-		if(getSet() == true) {
 			graphics2d.drawImage(imageIcon, x, y, width, height,this);
-		}
 	}
 	public void setBound(int x, int y, int width, int height) {
 		this.x = x;
@@ -83,11 +79,4 @@ public class Lables extends JLabel {
 		setText(name);
 	}
 
-	public boolean getSet() {
-		return set;
-	}
-
-	public void setSet(boolean set) {
-		this.set = set;
-	}
 }

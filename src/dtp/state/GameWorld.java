@@ -3,11 +3,15 @@ package dtp.state;
 import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 import dtp.camera.Camera;
 import dtp.control.Lables;
+import dtp.state.MenuStates;
 import dtp.effect.DataLoader;
 import dtp.gameobject.ParticularObject;
 import dtp.human.Bat;
@@ -23,13 +27,22 @@ import dtp.map.PhysicalMap;
 import dtp.userinterface.GameMain;
 import dtp.userinterface.GamePanel;
 
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JLabel;
+
+import java.io.BufferedReader;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import java.io.File;
+
 @SuppressWarnings("deprecation")
-public class GameWorld extends State {
+public class GameWorld extends State implements MouseListener {
 
     private BufferedImage bufferedImage;
     private int lastState;
-
-    Lables[] lable;
 
     private Ninja ninja;
     private PhysicalMap physicalMap;
@@ -55,7 +68,7 @@ public class GameWorld extends State {
     public int tutorialState = INTROGAME;
 
     public int storyTutorial = 0;
-    
+
     private boolean finalbossTrigger = true;
     private boolean music;
 
@@ -67,6 +80,8 @@ public class GameWorld extends State {
     public AudioClip bgMusic;
 
     public int BOT;
+
+    Lables WL[];
 
     public GameWorld(GamePanel gamePanel, boolean music) {
         super(gamePanel);
@@ -88,7 +103,7 @@ public class GameWorld extends State {
     }
 
     private void initEnemies() {
-        this.BOT = 1;
+        this.BOT = 7;
         ParticularObject redeye = new RedEyeDevil(480, 1696, this, isMusic());
         redeye.setDirection(ParticularObject.LEFT_DIR);
         redeye.setTeamType(ParticularObject.ENEMY_TEAM);
@@ -151,13 +166,14 @@ public class GameWorld extends State {
         return ninja;
     }
 
-    public long getScore(){
+    public long getScore() {
         return score;
     }
 
-    public void setScore(long score){
+    public void setScore(long score) {
         this.score = score;
     }
+
     public BulletManager getBulletManager() {
         return bulletManager;
     }
@@ -191,8 +207,8 @@ public class GameWorld extends State {
                     } else {
                         ninja.stopRun();
                     }
-                    if (openIntroGameY < 450 && camera.getPosX() >= finalBossX && 
-                            ninja.getPosX() >= finalBossX + 150 && ninja.getPosY() <= finalBossY) {
+                    if (openIntroGameY < 450 && camera.getPosX() >= finalBossX && ninja.getPosX() >= finalBossX + 150
+                            && ninja.getPosY() <= finalBossY) {
                         camera.lock();
                         ninja.stopRun();
                         physicalMap.phys_map[21][89] = 1;
@@ -246,9 +262,9 @@ public class GameWorld extends State {
                 particularObjectManager.UpdateObjects(); // update
                 bulletManager.UpdateObjects(); //
                 physicalMap.Update();
-                if(ninja.getPosX() <= 2500)
+                if (ninja.getPosX() <= 2500)
                     camera.Update();
-                
+
                 if ((ninja.getPosX() > finalBossX && ninja.getPosY() <= finalBossY) && finalbossTrigger) {
                     finalbossTrigger = false;
                     switchState(TUTORIAL);
@@ -269,16 +285,22 @@ public class GameWorld extends State {
                         ninja.setState(ParticularObject.NOBEHURT);
                         particularObjectManager.addObject(ninja);
                     } else {
+                        createGameWin();
+                        WL[5].change();
                         switchState(GAMEOVER);
                         bgMusic.stop();
                     }
                 }
-                if (BOT <= 0)
+                if (BOT <= 0) {
+                    createGameWin();
                     switchState(GAMEWIN);
+                }
                 break;
             case GAMEOVER:
-                break;
             case GAMEWIN:
+                for (int i = 0; i < 6; i++) {
+                    WL[i].draw((Graphics2D) bufferedImage.getGraphics());
+                }
                 break;
         }
     }
@@ -308,7 +330,12 @@ public class GameWorld extends State {
                     }
                     TutorialRender(g2);
                     break;
+                case GAMEOVER:
                 case GAMEWIN:
+                    for (int i = 0; i < 6; i++) {
+                        WL[i].draw(g2);
+                    }
+                    break;
                 case GAMEPLAY:
                     backgroundMap.draw(g2);//
                     particularObjectManager.draw(g2);//
@@ -320,36 +347,80 @@ public class GameWorld extends State {
 
                     String diem = String.valueOf(getScore());
                     g2.setColor(Color.YELLOW);
-                    g2.drawString("SCORE: " +diem.toString(),GameMain.SCREEN_WIDTH - 100, 20);
+                    g2.drawString("SCORE: " + diem.toString(), GameMain.SCREEN_WIDTH - 100, 20);
                     for (int i = 0; i < numberOfLife; i++) {
                         g2.drawImage(DataLoader.getInstance().getFrameImage("hearth").getImage(), 20 + i * 40, 18,
                                 null);
                     }
-                    if (state == GAMEWIN) {
-                        //g2.drawImage(DataLoader.getInstance().getFrameImage("score").getImage(), 250, 50, null);
-                        createGameWin();
-                        drawGameWin(g2);
-                    }
+
                     break;
-                case GAMEOVER:
-                    g2.setColor(Color.BLACK);
-                    g2.fillRect(0, 0, GameMain.SCREEN_WIDTH, GameMain.SCREEN_HEIGHT);
-                    g2.setColor(Color.WHITE);
-                    g2.drawString("GAME OVER!", 450, 300);
-                    break;
+
             }
         }
     }
 
-    private void createGameWin(){
-        lable = new Lables[6];
-        lable[0].setOpaque(false);
-        lable[0].setImageIcon1(DataLoader.getInstance().getFrameImage("endgame").getImage());
-        lable[0].setBound(250, 50, 400, 400);
-    }
+    private void createGameWin() {
+        WL = new Lables[8];
+        try {
+            FileReader fr = new FileReader("data/hd.txt");
+            BufferedReader br = new BufferedReader(fr);
 
-    private void drawGameWin(Graphics2D g2){
-        lable[0].draw(g2);
+            String line;
+
+            if (br.readLine() == null) {
+                System.out.println("No data");
+                throw new IOException();
+            } else {
+
+                while ((line = br.readLine()).equals(""))
+                    ;
+                int n = Integer.parseInt(line);
+
+                for (int i = 0; i < 7; i++) {
+
+                    while ((line = br.readLine()).equals(""))
+                        ;
+                    WL[i] = new Lables(line);
+                    while ((line = br.readLine()).equals(""))
+                        ;
+                    String[] str = line.split(" ");
+                    int x = Integer.parseInt(str[1]);
+
+                    while ((line = br.readLine()).equals(""))
+                        ;
+                    str = line.split(" ");
+                    int y = Integer.parseInt(str[1]);
+
+                    while ((line = br.readLine()).equals(""))
+                        ;
+                    str = line.split(" ");
+                    int w = Integer.parseInt(str[1]);
+
+                    while ((line = br.readLine()).equals(""))
+                        ;
+                    str = line.split(" ");
+                    int h = Integer.parseInt(str[1]);
+
+                    BufferedImage imageData = ImageIO.read(new File("data/hd.png"));
+                    BufferedImage image = imageData.getSubimage(x, y, w, h);
+
+                    WL[i].setOpaque(false);
+                    WL[i].setImageIcon1(image);
+                    gamePanel.add(WL[i]);
+                }
+                WL[0].setBound(250, 50, 400, 400); // chinh
+                WL[1].setBound(630, 90, 40, 40); // exit
+                WL[3].setBound(350, 390, 80, 40); // play
+                WL[4].setBound(510, 390, 80, 40); // replay
+                WL[5].setBound(415, 57, 100, 50); // win
+                WL[2].setBound(415, 195, 80, 50); // Diem
+                WL[5].setImageIcon2(WL[6].getImage());
+                gamePanel.addMouseListener(this);
+                br.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -424,7 +495,7 @@ public class GameWorld extends State {
                     ninja.stopRun();
                 break;
             case KeyEvent.VK_ENTER:
-                
+
                 if (state == PAUSEGAME) {
                     state = lastState;
                 }
@@ -434,14 +505,74 @@ public class GameWorld extends State {
             case KeyEvent.VK_A:
                 break;
             case KeyEvent.VK_ESCAPE:
-                if(state != PAUSEGAME){
+                if (state != PAUSEGAME) {
                     lastState = state;
                     state = PAUSEGAME;
-                }else{
+                } else {
                     state = lastState;
                 }
                 break;
         }
+    }
+
+    private Boolean Compare( MouseEvent e,  Lables l1) {
+		if(e.getX() >= l1.getX() && e.getY()>=l1.getY()) {
+			if(e.getX() <= l1.getX() + l1.getWidth() && e.getY() <= l1.getY() + l1.getHeight())
+				return true;
+		}
+		return false;
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        // TODO Auto-generated method stub
+        if(Compare(e, WL[1])){
+            System.exit(0);
+        }else if(Compare(e, WL[3])){
+            camera.setPosX(0);
+            camera.setPosY(50);
+            ninja.setPosX(136);
+            ninja.setPosY(1800);
+            initEnemies();
+            switchState(GAMEPLAY);
+            numberOfLife = 3;
+            ninja.setBlood(100);
+            WL[5].change();
+        }else if(Compare(e, WL[4])){
+            camera.setPosX(0);
+            camera.setPosY(50);
+            ninja.setPosX(200);
+            ninja.setPosY(1800);
+            initEnemies();
+            switchState(GAMEPLAY);
+            numberOfLife = 3;
+            ninja.setBlood(100);
+            WL[5].change();
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        // TODO Auto-generated method stub
+
     }
 }
 
