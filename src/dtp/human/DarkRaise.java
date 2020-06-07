@@ -64,6 +64,7 @@ public class DarkRaise extends ParticularObject{
 			attack();
 			startTimeShoot = System.nanoTime();
 		}
+		
 	}
 	
 	private void setDamages(){

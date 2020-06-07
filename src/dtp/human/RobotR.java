@@ -74,7 +74,7 @@ public class RobotR extends ParticularObject{
     	if(System.nanoTime() - startTimeToShoot > 1000 * 10000000 * 1.5) {
     		attack();
     		startTimeToShoot = System.nanoTime();
-    	}
+		}
     }
     
     @Override

@@ -82,6 +82,7 @@ public class FinalBoss extends Human{
         } else {
             setSpeedX(0);
         }
+        
     }
     
     @Override

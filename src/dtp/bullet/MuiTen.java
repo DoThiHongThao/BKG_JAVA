@@ -6,7 +6,6 @@ import java.awt.Rectangle;
 import dtp.effect.Animation;
 import dtp.effect.DataLoader;
 import dtp.gameobject.Bullet;
-import dtp.gameobject.ParticularObject;
 import dtp.state.GameWorld;
 
 public class MuiTen extends Bullet{

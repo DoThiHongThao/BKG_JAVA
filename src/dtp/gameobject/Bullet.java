@@ -9,6 +9,7 @@ public abstract class Bullet extends ParticularObject{
     public Bullet(float x, float y, float width, float height, float mass, int damage, GameWorld gameWorld) {
 		super(x, y, width, height, mass, 1, gameWorld, true);
 		setDamage(damage);
+		Bullet = true;
     }
     
     public abstract void draw(Graphics2D g2);

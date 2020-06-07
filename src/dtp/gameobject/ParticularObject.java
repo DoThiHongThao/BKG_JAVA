@@ -42,6 +42,8 @@ public abstract class ParticularObject extends GameObject {
 
     private boolean music;                      // set music
     
+    public Boolean Bullet;
+
     public ParticularObject(float x, float y, float width, float height, float mass,
     int blood, GameWorld gameWorld, boolean music) {
         super(x, y, gameWorld);
@@ -53,6 +55,7 @@ public abstract class ParticularObject extends GameObject {
 
         this.music = music;
         direction = RIGHT_DIR;
+        Bullet = false;
     }
 
     public float getWidth() {
@@ -241,9 +244,10 @@ public abstract class ParticularObject extends GameObject {
 				
 			case FEY: // gan chet
                 state = DEATH; // chet
-                ParticularObject object2 = getGameWorld().getParticularObjectManager().getCollisionWithEnemyObject(this);
-                if(object2 != null && object2 instanceof ParticularObject)
-                    this.getGameWorld().BOT--;
+                if(Bullet == false){
+                    getGameWorld().BOT--;
+                    System.out.println(getGameWorld().BOT);
+                }
 				break;
 				
 			case NOBEHURT: // khong trung dan

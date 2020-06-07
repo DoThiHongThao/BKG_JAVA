@@ -63,6 +63,7 @@ public class Bat extends ParticularObject{
 			attack();
 			startTimeShoot = System.nanoTime();
 		}
+		
     }
     
     @Override

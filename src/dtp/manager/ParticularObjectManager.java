@@ -80,7 +80,7 @@ public class ParticularObjectManager {
                 
                 if (!object.isObjectOutOfCameraView()) object.Update();
                 if (object.getState() == ParticularObject.DEATH) {
-                    particularObjects.remove(id);
+					particularObjects.remove(id);
                 }
             }
         }
